@@ -1,104 +1,39 @@
 ---
+
 ---
 
-<section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <h1>Green Schools Foundation</h1>
-            <p class="tagline">Serving Students Since 1992</p>
-            <p class="description">
-                The Green Schools Foundation provides scholarships, classroom grants, and unique opportunities to students and staff in the Green Local School system.
+<section
+    class="bg-gradient-to-br from-primary-500 to-secondary-500 text-white py-16 md:py-16 text-center min-h-[50vh] md:min-h-[60vh] flex items-center"
+>
+    <div class="max-w-6xl mx-auto px-6 w-full">
+        <div class="w-full">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 text-white">
+                Green Schools Foundation
+            </h1>
+            <p class="text-xl font-light mb-6 opacity-90">
+                Serving Students Since 1992
             </p>
-            <div class="cta-buttons">
-                <a href="#memberships" class="btn btn-primary">Become a Member</a>
-                <a href="#donate" class="btn btn-secondary">Donate Now</a>
+            <p class="text-lg max-w-2xl mx-auto mb-8 opacity-95">
+                The Green Schools Foundation provides scholarships, classroom
+                grants, and unique opportunities to students and staff in the
+                Green Local School system.
+            </p>
+            <div
+                class="flex flex-col md:flex-row gap-4 justify-center items-center"
+            >
+                <a
+                    href="#memberships"
+                    class="inline-block px-8 py-3 bg-white text-primary-500 rounded-lg font-medium transition-all duration-200 border-2 border-transparent hover:-translate-y-0.5 hover:shadow-custom-lg w-full md:w-auto max-w-xs text-center"
+                >
+                    Become a Member
+                </a>
+                <a
+                    href="#donate"
+                    class="inline-block px-8 py-3 bg-transparent text-white border-2 border-white rounded-lg font-medium transition-all duration-200 hover:bg-white hover:text-primary-500 hover:-translate-y-0.5 w-full md:w-auto max-w-xs text-center"
+                >
+                    Donate Now
+                </a>
             </div>
         </div>
     </div>
 </section>
-
-<style>
-    .hero {
-        background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
-        color: var(--text-light);
-        padding: 4rem 0;
-        text-align: center;
-        min-height: 60vh;
-        display: flex;
-        align-items: center;
-    }
-
-    .hero-content {
-        width: 100%;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        color: var(--text-light);
-    }
-
-    .tagline {
-        font-size: 1.25rem;
-        font-weight: 300;
-        margin-bottom: 1.5rem;
-        opacity: 0.9;
-    }
-
-    .description {
-        font-size: 1.125rem;
-        max-width: 600px;
-        margin: 0 auto 2rem auto;
-        opacity: 0.95;
-    }
-
-    .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .btn-primary {
-        background-color: var(--text-light);
-        color: var(--primary-green);
-    }
-
-    .btn-primary:hover {
-        background-color: var(--background-light);
-        box-shadow: var(--shadow-lg);
-    }
-
-    .btn-secondary {
-        background-color: transparent;
-        color: var(--text-light);
-        border-color: var(--text-light);
-    }
-
-    .btn-secondary:hover {
-        background-color: var(--text-light);
-        color: var(--primary-green);
-    }
-
-    @media (max-width: 768px) {
-        .hero {
-            padding: 3rem 0;
-            min-height: 50vh;
-        }
-
-        .hero h1 {
-            font-size: 2.25rem;
-        }
-
-        .cta-buttons {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .btn {
-            width: 100%;
-            max-width: 200px;
-        }
-    }
-</style>
