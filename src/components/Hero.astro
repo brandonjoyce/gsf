@@ -1,0 +1,104 @@
+---
+---
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Green Schools Foundation</h1>
+            <p class="tagline">Serving Students Since 1992</p>
+            <p class="description">
+                The Green Schools Foundation provides scholarships, classroom grants, and unique opportunities to students and staff in the Green Local School system.
+            </p>
+            <div class="cta-buttons">
+                <a href="#memberships" class="btn btn-primary">Become a Member</a>
+                <a href="#donate" class="btn btn-secondary">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+        color: var(--text-light);
+        padding: 4rem 0;
+        text-align: center;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--text-light);
+    }
+
+    .tagline {
+        font-size: 1.25rem;
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+    }
+
+    .description {
+        font-size: 1.125rem;
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+        opacity: 0.95;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary {
+        background-color: var(--text-light);
+        color: var(--primary-green);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--background-light);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: var(--text-light);
+        border-color: var(--text-light);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--text-light);
+        color: var(--primary-green);
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+            padding: 3rem 0;
+            min-height: 50vh;
+        }
+
+        .hero h1 {
+            font-size: 2.25rem;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 200px;
+        }
+    }
+</style>

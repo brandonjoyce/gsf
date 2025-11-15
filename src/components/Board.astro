@@ -1,0 +1,76 @@
+---
+---
+
+<section class="board">
+    <div class="container">
+        <div class="board-content">
+            <h2>Join the Board</h2>
+            <p>Join the Green Schools Foundation!</p>
+            <div class="board-actions">
+                <button class="btn btn-board">Trustee Application</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .board {
+        padding: 4rem 0;
+        background-color: var(--background-light);
+    }
+
+    .board-content {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .board h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-green);
+    }
+
+    .board p {
+        font-size: 1.125rem;
+        color: var(--text-gray);
+        margin-bottom: 2rem;
+    }
+
+    .board-actions {
+        margin-top: 2rem;
+    }
+
+    .btn-board {
+        background-color: var(--secondary-green);
+        color: var(--text-light);
+        border: none;
+        padding: 1rem 2.5rem;
+        border-radius: 0.5rem;
+        font-size: 1.125rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .btn-board:hover {
+        background-color: var(--primary-green);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    @media (max-width: 768px) {
+        .board {
+            padding: 3rem 0;
+        }
+
+        .board h2 {
+            font-size: 2rem;
+        }
+
+        .btn-board {
+            width: 100%;
+            max-width: 280px;
+        }
+    }
+</style>

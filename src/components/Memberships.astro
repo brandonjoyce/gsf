@@ -1,0 +1,163 @@
+---
+const memberships = [
+    {
+        name: "Student Membership",
+        price: "$5",
+        description: "Support our mission with this entry-level membership perfect for students and young supporters."
+    },
+    {
+        name: "Partner in Education",
+        price: "$50",
+        description: "Join as a Partner in Education and help us make a meaningful impact on local students."
+    },
+    {
+        name: "Merit Roll",
+        price: "$75",
+        description: "Recognition-level membership supporting academic excellence and student achievement."
+    },
+    {
+        name: "Honor Roll",
+        price: "$100",
+        description: "Premium membership demonstrating your commitment to educational excellence."
+    },
+    {
+        name: "Salutatorian",
+        price: "$200",
+        description: "Our highest individual membership tier, making the greatest impact on student success."
+    }
+];
+---
+
+<section id="memberships" class="memberships">
+    <div class="container">
+        <h2>Become a Member for the 2025-26 School Year</h2>
+        <p class="section-description">Join the Green Schools Foundation! Choose your level of support:</p>
+
+        <div class="membership-grid">
+            {memberships.map((membership) => (
+                <div class="membership-card">
+                    <div class="membership-header">
+                        <h3 class="membership-name">{membership.name}</h3>
+                        <div class="membership-price">{membership.price}</div>
+                    </div>
+                    <p class="membership-description">{membership.description}</p>
+                    <button class="btn btn-membership">Choose This Level</button>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .memberships {
+        padding: 4rem 0;
+        background-color: var(--background-light);
+    }
+
+    .memberships h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-green);
+    }
+
+    .section-description {
+        text-align: center;
+        font-size: 1.125rem;
+        color: var(--text-gray);
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .membership-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .membership-card {
+        background: var(--background-white);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: 1px solid var(--border-light);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .membership-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+    }
+
+    .membership-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .membership-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .membership-name {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
+    }
+
+    .membership-price {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-green);
+        margin-bottom: 1rem;
+    }
+
+    .membership-description {
+        color: var(--text-gray);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        min-height: 3rem;
+    }
+
+    .btn-membership {
+        background-color: var(--primary-green);
+        color: var(--text-light);
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        width: 100%;
+    }
+
+    .btn-membership:hover {
+        background-color: var(--secondary-green);
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .memberships {
+            padding: 3rem 0;
+        }
+
+        .memberships h2 {
+            font-size: 2rem;
+        }
+
+        .membership-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

@@ -1,22 +1,109 @@
+---
+export interface Props {
+    title?: string;
+    description?: string;
+}
+
+const {
+    title = "Green Schools Foundation",
+    description = "Serving Students Since 1992 - Providing scholarships, classroom grants, and unique opportunities to students and staff in the Green Local School system.",
+} = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={description} />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+    </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+    :root {
+        --primary-green: #2d5a27;
+        --secondary-green: #4a7c59;
+        --light-green: #8fbc8f;
+        --accent-green: #90c695;
+        --text-dark: #1a1a1a;
+        --text-gray: #666666;
+        --text-light: #ffffff;
+        --background-light: #f8fffe;
+        --background-white: #ffffff;
+        --border-light: #e5e7eb;
+        --shadow:
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg:
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        font-family: "Inter", system-ui, sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-white);
+        color: var(--text-dark);
+        line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--text-dark);
+    }
+
+    p {
+        margin: 0 0 1rem 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
 </style>

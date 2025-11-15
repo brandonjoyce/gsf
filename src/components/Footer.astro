@@ -1,0 +1,93 @@
+---
+---
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p class="contact-email">
+                    <a href="mailto:greenschoolsfoundation@gmail.com">
+                        greenschoolsfoundation@gmail.com
+                    </a>
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Mailing Address</h3>
+                <address>
+                    PO Box 104<br>
+                    Green, Ohio 44232
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Green Schools Foundation</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background-color: var(--primary-green);
+        color: var(--text-light);
+        padding: 3rem 0 1rem 0;
+        margin-top: 2rem;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--text-light);
+    }
+
+    .contact-email a {
+        color: var(--accent-green);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .contact-email a:hover {
+        color: var(--text-light);
+        text-decoration: underline;
+    }
+
+    address {
+        font-style: normal;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 2rem;
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    @media (max-width: 768px) {
+        .footer {
+            padding: 2rem 0 1rem 0;
+        }
+
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            text-align: center;
+        }
+    }
+</style>
