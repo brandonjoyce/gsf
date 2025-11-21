@@ -6,43 +6,107 @@
     <div class="max-w-6xl mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
             <!-- Logo and Brand -->
-            <a href="#top" class="flex items-center space-x-4 group">
+            <a href="/" class="flex items-center space-x-2 group">
                 <img
-                    src="/gsf-logo.png"
+                    src="/gsf-logo.webp"
                     alt="Green Schools Foundation Logo"
-                    class="h-16 w-16 object-contain transition-transform duration-200 group-hover:scale-105"
+                    class="h-24 w-24 object-contain transition-transform duration-200 group-hover:scale-105"
                 />
-                <div class="hidden md:block">
-                    <h1
-                        class="text-2xl font-bold text-primary-600 group-hover:text-primary-700 transition-colors duration-200"
-                    >
-                        Green Schools Foundation
-                    </h1>
-                    <p class="text-sm text-gray-600">
-                        Serving Students Since 1992
-                    </p>
-                </div>
             </a>
 
             <!-- Navigation Links -->
-            <nav class="hidden md:flex items-center space-x-8">
+            <nav class="hidden md:flex items-center space-x-6">
+                <div class="relative group">
+                    <button
+                        class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium flex items-center"
+                    >
+                        Foundation Initiatives
+                        <svg
+                            class="w-4 h-4 ml-1"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+                    >
+                        <div class="py-2">
+                            <a
+                                href="/scholarships"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                                >Scholarships</a
+                            >
+                            <a
+                                href="/academic-class-grants"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                                >Academic Classroom Grants</a
+                            >
+                            <a
+                                href="/academy-of-scholars"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                                >Academy of Scholars</a
+                            >
+                            <a
+                                href="/laws-of-life"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                                >Laws of Life</a
+                            >
+                            <a
+                                href="/gsf-book-clubs"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                                >GSF Book Clubs</a
+                            >
+                            <a
+                                href="/pbis"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                                >PBIS</a
+                            >
+                            <a
+                                href="/rox"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                                >ROX</a
+                            >
+                            <a
+                                href="/little-free-library"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                                >Little Free Library</a
+                            >
+                            <a
+                                href="/staff-spotlight"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                                >Staff Spotlight</a
+                            >
+                        </div>
+                    </div>
+                </div>
                 <a
-                    href="#memberships"
+                    href="/celebration-of-education"
                     class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
                 >
-                    Memberships
+                    Celebration of Education
                 </a>
                 <a
-                    href="#donate"
+                    href="/about-gsf"
                     class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
                 >
-                    Donate
+                    About GSF
                 </a>
                 <a
-                    href="#board"
+                    href="/membership"
                     class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
                 >
-                    Board
+                    Membership
+                </a>
+                <a
+                    href="/blog"
+                    class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
+                >
+                    Blog
                 </a>
                 <a
                     href="mailto:greenschoolsfoundation@gmail.com"
@@ -80,22 +144,52 @@
         >
             <div class="flex flex-col space-y-4">
                 <a
-                    href="#memberships"
+                    href="/foundation-initiatives"
                     class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium py-2"
                 >
-                    Memberships
+                    Foundation Initiatives
                 </a>
                 <a
-                    href="#donate"
-                    class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium py-2"
+                    href="/scholarships"
+                    class="text-gray-600 hover:text-primary-600 transition-colors duration-200 font-medium py-2 pl-4 text-sm"
                 >
-                    Donate
+                    • Scholarships
                 </a>
                 <a
-                    href="#board"
+                    href="/academic-class-grants"
+                    class="text-gray-600 hover:text-primary-600 transition-colors duration-200 font-medium py-2 pl-4 text-sm"
+                >
+                    • Academic Classroom Grants
+                </a>
+                <a
+                    href="/academy-of-scholars"
+                    class="text-gray-600 hover:text-primary-600 transition-colors duration-200 font-medium py-2 pl-4 text-sm"
+                >
+                    • Academy of Scholars
+                </a>
+                <a
+                    href="/celebration-of-education"
                     class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium py-2"
                 >
-                    Board
+                    Celebration of Education
+                </a>
+                <a
+                    href="/about-gsf"
+                    class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium py-2"
+                >
+                    About GSF
+                </a>
+                <a
+                    href="/membership"
+                    class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium py-2"
+                >
+                    Membership
+                </a>
+                <a
+                    href="/blog"
+                    class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium py-2"
+                >
+                    Blog
                 </a>
                 <a
                     href="mailto:greenschoolsfoundation@gmail.com"

@@ -1,0 +1,129 @@
+---
+import ContentLayout from "../layouts/ContentLayout.astro";
+---
+
+<ContentLayout
+    title="Scholarships"
+    description="Since 1992, Green Schools Foundation has been pleased to award $372,100 in scholarships to 440 outstanding seniors."
+    showBreadcrumbs={true}
+    breadcrumbs={[
+        { name: "Foundation Initiatives", href: "/foundation-initiatives" },
+        { name: "Scholarships", href: "/scholarships" }
+    ]}
+>
+    <div class="content-section">
+        <h2>Green Schools Foundation Scholarships</h2>
+        <p>
+            Since 1992, Green Schools Foundation has been pleased to award $372,100 in scholarships to 440 outstanding seniors.
+        </p>
+        <p>
+            The Foundation is dedicated to furthering academic excellence in the Green Schools by providing scholarships and academic classroom grants, which benefit our elementary, middle, and high school students.
+        </p>
+    </div>
+
+    <div class="highlight-box">
+        <h2 class="text-2xl font-bold text-primary-600 mb-4">2025 Scholarship Applications</h2>
+        <p class="mb-4">
+            Scholarship applications for 2025 are now available. The Academic Scholarship application is for individuals entering a university and the "School to Work Scholarship" application is for individuals entering a trade.
+        </p>
+        <p class="font-semibold text-red-600 mb-4">
+            Note: The due date for submitting your application is March 21, 2025. No applications will be accepted after the deadline.
+        </p>
+        <p>
+            If you have any questions about the Green Schools Foundation Scholarships, please email
+            <a href="mailto:greenschoolsfoundation@gmail.com" class="text-primary-600 hover:text-primary-700">greenschoolsfoundation@gmail.com</a>.
+        </p>
+    </div>
+
+    <div class="grid-2 mb-12">
+        <div class="text-center">
+            <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+                <div class="w-20 h-20 mx-auto mb-4 bg-primary-100 rounded-full flex items-center justify-center">
+                    <svg class="w-10 h-10 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-primary-600 mb-4">GSF Academic Scholarship</h3>
+                <p class="text-gray-600 mb-6">For students entering a university or college</p>
+                <a
+                    href="/documents/GSF-Academic-Scholarship-Application-2025.pdf"
+                    target="_blank"
+                    class="button-primary"
+                >
+                    Download Application
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+                <div class="w-20 h-20 mx-auto mb-4 bg-secondary-100 rounded-full flex items-center justify-center">
+                    <svg class="w-10 h-10 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-secondary-600 mb-4">GSF School to Work Scholarship</h3>
+                <p class="text-gray-600 mb-6">For students entering a trade or vocational program</p>
+                <a
+                    href="/documents/GSF-School-to-Work-Scholarship-Application-2025.pdf"
+                    target="_blank"
+                    class="button-secondary"
+                >
+                    Download Application
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Scholarship Recipients</h2>
+        <p>
+            We are proud to celebrate our scholarship recipients who have demonstrated academic excellence, leadership, and commitment to their community. These outstanding students represent the best of Green Local Schools and continue to make us proud as they pursue their educational goals.
+        </p>
+
+        <div class="text-center my-8">
+            <img src="/images/scholarships2024.jpg" alt="2024 Scholarship Recipients" class="max-w-4xl mx-auto rounded-lg shadow-lg" />
+            <p class="text-sm text-gray-600 mt-2">2024 Green Schools Foundation Scholarship Recipients</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>How to Apply</h2>
+        <ol class="space-y-4">
+            <li class="flex items-start">
+                <span class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-4">1</span>
+                <div>
+                    <h3 class="font-semibold text-gray-900">Choose Your Application</h3>
+                    <p class="text-gray-700">Download either the Academic Scholarship application (for university-bound students) or the School to Work Scholarship application (for trade/vocational students).</p>
+                </div>
+            </li>
+            <li class="flex items-start">
+                <span class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-4">2</span>
+                <div>
+                    <h3 class="font-semibold text-gray-900">Complete the Application</h3>
+                    <p class="text-gray-700">Fill out all required sections thoroughly and honestly. Include any required essays, transcripts, and recommendation letters.</p>
+                </div>
+            </li>
+            <li class="flex items-start">
+                <span class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-4">3</span>
+                <div>
+                    <h3 class="font-semibold text-gray-900">Submit Before Deadline</h3>
+                    <p class="text-gray-700">Submit your completed application by <strong>March 21, 2025</strong>. Late applications will not be accepted.</p>
+                </div>
+            </li>
+            <li class="flex items-start">
+                <span class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-4">4</span>
+                <div>
+                    <h3 class="font-semibold text-gray-900">Await Results</h3>
+                    <p class="text-gray-700">Recipients will be notified and recognized at our annual Celebration of Education event.</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <div class="content-section text-center">
+        <a href="/celebration-of-education" class="button-primary mr-4">Learn About Celebration of Education</a>
+        <a href="mailto:greenschoolsfoundation@gmail.com" class="button-secondary">Contact Us</a>
+    </div>
+</ContentLayout>

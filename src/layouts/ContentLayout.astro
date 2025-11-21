@@ -1,0 +1,138 @@
+---
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+    title: string;
+    description?: string;
+    showBreadcrumbs?: boolean;
+    breadcrumbs?: Array<{name: string, href: string}>;
+}
+
+const { title, description, showBreadcrumbs = false, breadcrumbs = [] } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+    <div id="top"></div>
+    <Header />
+
+    <!-- Hero Section for Content Pages -->
+    <section class="bg-gradient-to-br from-primary-500 to-secondary-800 text-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">{title}</h1>
+                {description && (
+                    <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
+                        {description}
+                    </p>
+                )}
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    {showBreadcrumbs && breadcrumbs.length > 0 && (
+        <section class="bg-gray-50 py-4 border-b border-gray-200">
+            <div class="container mx-auto px-6">
+                <nav class="flex" aria-label="Breadcrumb">
+                    <ol class="flex items-center space-x-2 text-sm">
+                        <li>
+                            <a href="/" class="text-primary-600 hover:text-primary-700 font-medium">
+                                Home
+                            </a>
+                        </li>
+                        {breadcrumbs.map((crumb, index) => (
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                {index === breadcrumbs.length - 1 ? (
+                                    <span class="text-gray-500 font-medium">{crumb.name}</span>
+                                ) : (
+                                    <a href={crumb.href} class="text-primary-600 hover:text-primary-700 font-medium">
+                                        {crumb.name}
+                                    </a>
+                                )}
+                            </li>
+                        ))}
+                    </ol>
+                </nav>
+            </div>
+        </section>
+    )}
+
+    <!-- Main Content -->
+    <main class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <slot />
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    /* Content-specific styles */
+    .content-section {
+        @apply mb-12;
+    }
+
+    .content-section h2 {
+        @apply text-3xl font-bold text-primary-600 mb-6;
+    }
+
+    .content-section h3 {
+        @apply text-2xl font-semibold text-secondary-800 mb-4;
+    }
+
+    .content-section p {
+        @apply text-gray-700 leading-relaxed mb-6;
+    }
+
+    .content-section ul, .content-section ol {
+        @apply text-gray-700 leading-relaxed mb-6 pl-6;
+    }
+
+    .content-section ul li {
+        @apply list-disc mb-2;
+    }
+
+    .content-section ol li {
+        @apply list-decimal mb-2;
+    }
+
+    .content-section a {
+        @apply text-primary-600 hover:text-primary-700 underline;
+    }
+
+    .content-section .highlight-box {
+        @apply bg-primary-50 border-l-4 border-primary-500 p-6 my-8;
+    }
+
+    .content-section .highlight-box p {
+        @apply text-primary-800 mb-0;
+    }
+
+    .content-section .button-primary {
+        @apply inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors;
+    }
+
+    .content-section .button-secondary {
+        @apply inline-block bg-secondary-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary-800 transition-colors;
+    }
+
+    .content-section img {
+        @apply rounded-lg shadow-lg mx-auto;
+    }
+
+    .content-section .grid-2 {
+        @apply grid md:grid-cols-2 gap-8 items-start;
+    }
+
+    .content-section .grid-3 {
+        @apply grid md:grid-cols-3 gap-6 items-start;
+    }
+</style>

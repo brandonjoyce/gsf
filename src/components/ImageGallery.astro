@@ -1,0 +1,189 @@
+---
+import HeroContent from "./HeroContent.astro";
+
+// Define the gallery images - can be easily updated later
+const galleryImages = [
+    {
+        src: "/gsf-logo.webp",
+        alt: "Green Schools Foundation Logo",
+        title: "Green Schools Foundation",
+    },
+    {
+        src: "/gsf-logo.webp",
+        alt: "Students in classroom",
+        title: "Supporting Academic Excellence",
+    },
+    {
+        src: "/gsf-logo.webp",
+        alt: "Scholarship ceremony",
+        title: "Scholarship Awards",
+    },
+    {
+        src: "/gsf-logo.webp",
+        alt: "Community event",
+        title: "Community Engagement",
+    },
+    {
+        src: "/gsf-logo.webp",
+        alt: "School activities",
+        title: "Student Programs",
+    },
+];
+---
+
+<section
+    class="bg-gradient-to-br from-primary-500 to-secondary-800 text-white py-16 md:py-20 min-h-[70vh] md:min-h-[80vh] flex items-center"
+>
+    <div class="max-w-6xl mx-auto px-6 w-full">
+        <div class="w-full">
+            <!-- Mobile: Content above gallery, Desktop: Side by side -->
+            <div class="flex flex-col lg:flex-row lg:items-center lg:gap-12">
+                <!-- Hero Content -->
+                <div class="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
+                    <HeroContent />
+                </div>
+
+                <!-- Gallery Container -->
+                <div class="lg:w-1/2">
+                    <!-- Main Display Image -->
+                    <div class="mb-6 md:mb-8 relative">
+                        <div
+                            class="relative overflow-hidden rounded-lg shadow-2xl bg-white/10 backdrop-blur-sm"
+                        >
+                            <img
+                                id="main-gallery-image"
+                                src={galleryImages[0].src}
+                                alt={galleryImages[0].alt}
+                                class="w-full h-64 md:h-80 lg:h-96 object-cover transition-all duration-500"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                            >
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h3
+                                    id="main-gallery-title"
+                                    class="text-xl md:text-2xl font-bold text-white drop-shadow-lg"
+                                >
+                                    {galleryImages[0].title}
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thumbnail Navigation -->
+                    <div
+                        class="flex justify-center lg:justify-start gap-2 md:gap-4 flex-wrap"
+                    >
+                        {
+                            galleryImages.map((image, index) => (
+                                <button
+                                    class={`gallery-thumb relative overflow-hidden rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg ${index === 0 ? "ring-2 ring-white active" : ""}`}
+                                    data-index={index}
+                                    data-src={image.src}
+                                    data-alt={image.alt}
+                                    data-title={image.title}
+                                >
+                                    <img
+                                        src={image.src}
+                                        alt={image.alt}
+                                        class="w-16 h-16 md:w-20 md:h-20 object-cover"
+                                    />
+                                    <div class="absolute inset-0 bg-black/20 transition-opacity duration-300 opacity-0 hover:opacity-0" />
+                                </button>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .gallery-thumb.active {
+        ring-width: 2px;
+        ring-color: rgb(255 255 255);
+        transform: scale(1.05);
+    }
+
+    .gallery-thumb:not(.active) {
+        opacity: 0.7;
+    }
+
+    .gallery-thumb:not(.active):hover {
+        opacity: 1;
+    }
+
+    #main-gallery-image {
+        min-height: 16rem;
+    }
+
+    @media (min-width: 768px) {
+        #main-gallery-image {
+            min-height: 20rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #main-gallery-image {
+            min-height: 24rem;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const mainImage = document.getElementById("main-gallery-image");
+        const mainTitle = document.getElementById("main-gallery-title");
+        const thumbnails = document.querySelectorAll(".gallery-thumb");
+
+        if (mainImage && mainTitle && thumbnails) {
+            thumbnails.forEach((thumb) => {
+                thumb.addEventListener("click", function () {
+                    const src = this.getAttribute("data-src");
+                    const alt = this.getAttribute("data-alt");
+                    const title = this.getAttribute("data-title");
+
+                    // Update main image
+                    mainImage.style.opacity = "0";
+                    setTimeout(() => {
+                        mainImage.src = src;
+                        mainImage.alt = alt;
+                        mainTitle.textContent = title;
+                        mainImage.style.opacity = "1";
+                    }, 250);
+
+                    // Update active state
+                    thumbnails.forEach((t) => t.classList.remove("active"));
+                    this.classList.add("active");
+                });
+            });
+
+            // Auto-rotate gallery every 5 seconds
+            let currentIndex = 0;
+            const autoRotate = setInterval(() => {
+                currentIndex = (currentIndex + 1) % thumbnails.length;
+                thumbnails[currentIndex].click();
+            }, 5000);
+
+            // Pause auto-rotation when user interacts
+            thumbnails.forEach((thumb) => {
+                thumb.addEventListener("click", () => {
+                    clearInterval(autoRotate);
+                    // Restart auto-rotation after 10 seconds of no interaction
+                    setTimeout(() => {
+                        currentIndex = Array.from(thumbnails).findIndex((t) =>
+                            t.classList.contains("active"),
+                        );
+                        setInterval(() => {
+                            currentIndex =
+                                (currentIndex + 1) % thumbnails.length;
+                            thumbnails[currentIndex].click();
+                        }, 5000);
+                    }, 10000);
+                });
+            });
+        }
+    });
+</script>
