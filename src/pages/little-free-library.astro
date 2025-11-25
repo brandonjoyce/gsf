@@ -1,0 +1,141 @@
+---
+import ContentLayout from "../layouts/ContentLayout.astro";
+---
+
+<ContentLayout
+    title="Little Free Library"
+    description="Green Schools Foundation, Green Local Schools, and the City of Green partnered to bring a Little Free Library to Central Park, promoting literacy and community engagement."
+    showBreadcrumbs={true}
+    breadcrumbs={[
+        { name: "Foundation Initiatives", href: "/foundation-initiatives" },
+        { name: "Little Free Library", href: "/little-free-library" }
+    ]}
+>
+    <div class="content-section">
+        <h2>Little Free Library&trade;</h2>
+        <p>
+            Green Schools Foundation, Green Local Schools, and the City of Green teamed up to make the "Little Free Library" a reality! This community partnership brings the joy of reading to visitors at Central Park.
+        </p>
+        <p class="mt-4">
+            The dedication ceremony featured GSF President Mark Herdlick and Mayor Neugebauer welcoming students and community members to celebrate this new addition to our community.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="flex flex-col gap-4">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="/images/little-free-library2.webp" alt="Little Free Library at Central Park" class="w-full h-full object-cover" style="height: 600px" />
+                </div>
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-lg" style="height: 600px">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.533876737875!2d-81.4722525880986!3d40.94788192302172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8836d4df118714eb%3A0x9af179043cdb5b7c!2sCentral%20Park!5e0!3m2!1sen!2sus!4v1764112530654!5m2!1sen!2sus" width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <h2 class="text-2xl font-bold text-primary-600 mb-4 text-center">How It Works</h2>
+        <p class="text-center text-gray-700 mb-6">
+            The Little Free Library follows a simple, community-driven concept:
+        </p>
+        <div class="grid-3">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-10 h-10 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-primary-600 mb-2">Take a Book</h3>
+                <p class="text-gray-600 text-sm">
+                    Browse the selection and take a book that interests you to read.
+                </p>
+            </div>
+            <div class="text-center">
+                <div class="w-20 h-20 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-10 h-10 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-accent-600 mb-2">Read & Enjoy</h3>
+                <p class="text-gray-600 text-sm">
+                    Relax in the park or take the book home to enjoy at your leisure.
+                </p>
+            </div>
+            <div class="text-center">
+                <div class="w-20 h-20 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-10 h-10 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-secondary-600 mb-2">Leave a Book</h3>
+                <p class="text-gray-600 text-sm">
+                    Return the book or leave another for the next reader to discover.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>A Community Partnership</h2>
+        <p class="mb-6">
+            This project represents the power of community collaboration, bringing together multiple organizations to promote literacy and a love of reading.
+        </p>
+        <div class="grid-3">
+            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200 text-center">
+                <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2">Green Schools Foundation</h3>
+                <p class="text-sm text-gray-600">
+                    Provides ongoing funding for additional books to keep the library stocked.
+                </p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200 text-center">
+                <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2">Green Local Schools</h3>
+                <p class="text-sm text-gray-600">
+                    Students and teachers contributed to building and stocking the library.
+                </p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200 text-center">
+                <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1.581.814L10 14.229l-4.419 2.585A1 1 0 014 16V4z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2">City of Green</h3>
+                <p class="text-sm text-gray-600">
+                    Hosts the library at Central Park for the entire community to enjoy.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Student Involvement</h2>
+        <p class="mb-6">
+            A special thank you to Mrs. Nicodemo and Mrs. Sears and the Green Intermediate School students who participated in this project and donated book selections:
+        </p>
+        <div class="bg-gray-50 rounded-lg p-6">
+            <p class="text-gray-700 leading-relaxed">
+                Caden Trizzino, Gavin Pickard, Cohen Lynch, Dominic Stewart, Jason Hill, Jeffrey Miller, Aiden Brueck, Grayson Crosier, Sam Matos, Molly Rutherford, Caroline Witmer, Maybree Garrott, Emily Graham, Sam Robinson, Ella Mattes, Mia Willis, Ella Marochino, and Kaylin Wolford.
+            </p>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <h2 class="text-2xl font-bold text-primary-600 mb-4">Visit the Little Free Library</h2>
+        <p class="mb-6 text-gray-700">
+            The Little Free Library is located at Central Park in Green, Ohio. Stop by anytime to browse the selection, take a book to read, or leave one for another visitor to enjoy!
+        </p>
+        <div class="text-center">
+            <a href="/gsf-book-clubs" class="button-primary mr-4">Learn About GSF Book Clubs</a>
+            <a href="/foundation-initiatives" class="button-secondary">View All Initiatives</a>
+        </div>
+    </div>
+</ContentLayout>
