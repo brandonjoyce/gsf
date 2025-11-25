@@ -74,8 +74,8 @@ const { title, description, showBreadcrumbs = false, breadcrumbs = [] } = Astro.
     <Footer />
 </Layout>
 
-<style>
-    /* Content-specific styles */
+<style is:global>
+    /* Content-specific styles - global so they apply to slotted content */
     .content-section {
         @apply mb-12;
     }
@@ -104,35 +104,35 @@ const { title, description, showBreadcrumbs = false, breadcrumbs = [] } = Astro.
         @apply list-decimal mb-2;
     }
 
-    .content-section a {
+    .content-section a:not(.button-primary):not(.button-secondary) {
         @apply text-primary-600 hover:text-primary-700 underline;
     }
 
-    .content-section .highlight-box {
+    .highlight-box {
         @apply bg-primary-50 border-l-4 border-primary-500 p-6 my-8;
     }
 
-    .content-section .highlight-box p {
-        @apply text-primary-800 mb-0;
+    .highlight-box p {
+        @apply text-primary-800;
     }
 
-    .content-section .button-primary {
-        @apply inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors;
+    .button-primary {
+        @apply inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors no-underline;
     }
 
-    .content-section .button-secondary {
-        @apply inline-block bg-secondary-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary-800 transition-colors;
+    .button-secondary {
+        @apply inline-block bg-secondary-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary-800 transition-colors no-underline;
     }
 
     .content-section img {
         @apply rounded-lg shadow-lg mx-auto;
     }
 
-    .content-section .grid-2 {
+    .grid-2 {
         @apply grid md:grid-cols-2 gap-8 items-start;
     }
 
-    .content-section .grid-3 {
+    .grid-3 {
         @apply grid md:grid-cols-3 gap-6 items-start;
     }
 </style>
