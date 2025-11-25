@@ -10,7 +10,7 @@
                 <img
                     src="/gsf-logo.webp"
                     alt="Green Schools Foundation Logo"
-                    class="h-24 w-24 object-contain transition-transform duration-200 group-hover:scale-105"
+                    class="h-24 w-full object-contain transition-transform duration-200 group-hover:scale-105"
                 />
             </a>
 
@@ -84,12 +84,34 @@
                         </div>
                     </div>
                 </div>
-                <a
-                    href="/celebration-of-education"
-                    class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
-                >
-                    Celebration of Education
-                </a>
+                <div class="relative group">
+                    <button
+                        class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium flex items-center"
+                    >
+                        Events
+                        <svg
+                            class="w-4 h-4 ml-1"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+                    >
+                        <div class="py-2">
+                            <a
+                                href="/celebration-of-education"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                                >Celebration of Education</a
+                            >
+                        </div>
+                    </div>
+                </div>
                 <a
                     href="/about-gsf"
                     class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
@@ -167,11 +189,14 @@
                 >
                     • Academy of Scholars
                 </a>
+                <span class="text-gray-700 font-medium py-2">
+                    Events
+                </span>
                 <a
                     href="/celebration-of-education"
-                    class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium py-2"
+                    class="text-gray-600 hover:text-primary-600 transition-colors duration-200 font-medium py-2 pl-4 text-sm"
                 >
-                    Celebration of Education
+                    • Celebration of Education
                 </a>
                 <a
                     href="/about-gsf"
