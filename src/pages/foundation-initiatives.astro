@@ -1,5 +1,98 @@
 ---
 import ContentLayout from "../layouts/ContentLayout.astro";
+
+interface Initiative {
+    title: string;
+    description: string;
+    href: string;
+    icon: string;
+    colorClass: string;
+    linkColorClass: string;
+}
+
+const mainInitiatives: Initiative[] = [
+    {
+        title: "Scholarships",
+        description: "Since 1992, we've awarded over $372,100 in scholarships to 440 outstanding seniors pursuing higher education and trade careers.",
+        href: "/scholarships",
+        icon: `<path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>`,
+        colorClass: "from-primary-500 to-accent-500",
+        linkColorClass: "text-primary-600 hover:text-primary-700"
+    },
+    {
+        title: "Academic Classroom Grants",
+        description: "Supporting teachers with funding for innovative classroom projects and educational materials that enhance student learning.",
+        href: "/academic-class-grants",
+        icon: `<path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/>`,
+        colorClass: "from-secondary-500 to-secondary-700",
+        linkColorClass: "text-secondary-600 hover:text-secondary-700"
+    }
+];
+
+const studentPrograms: Initiative[] = [
+    {
+        title: "Academy of Scholars",
+        description: "Recognizing and supporting our highest achieving students",
+        href: "/academy-of-scholars",
+        icon: `<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
+        colorClass: "bg-primary-100",
+        linkColorClass: "text-primary-600 hover:text-primary-700"
+    },
+    {
+        title: "Laws of Life",
+        description: "Essay competition promoting character and values",
+        href: "/laws-of-life",
+        icon: `<path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>`,
+        colorClass: "bg-accent-100",
+        linkColorClass: "text-accent-600 hover:text-accent-700"
+    },
+    {
+        title: "PBIS Support",
+        description: "Positive Behavioral Interventions and Supports",
+        href: "/pbis",
+        icon: `<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>`,
+        colorClass: "bg-secondary-100",
+        linkColorClass: "text-secondary-600 hover:text-secondary-700"
+    }
+];
+
+const communityEnrichment: Initiative[] = [
+    {
+        title: "GSF Book Clubs",
+        description: "Promoting literacy and reading comprehension through engaging book club programs for students of all ages.",
+        href: "/gsf-book-clubs",
+        icon: `<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>`,
+        colorClass: "text-primary-600",
+        linkColorClass: "text-primary-600 hover:text-primary-700"
+    },
+    {
+        title: "Little Free Library",
+        description: "Building community connections and promoting reading through our neighborhood book exchange program.",
+        href: "/little-free-library",
+        icon: `<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>`,
+        colorClass: "text-accent-600",
+        linkColorClass: "text-accent-600 hover:text-accent-700"
+    }
+];
+
+const studentEmpowerment: Initiative[] = [
+    {
+        title: "ROX Program",
+        description: "Ruling Our eXperiences - Empowering young women to make positive life choices and develop leadership skills.",
+        href: "/rox",
+        icon: `<path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>`,
+        colorClass: "text-secondary-600",
+        linkColorClass: "text-secondary-600 hover:text-secondary-700"
+    },
+    {
+        title: "Staff Spotlight",
+        description: "Recognizing and celebrating the outstanding educators who make a difference in our students' lives every day.",
+        href: "/staff-spotlight",
+        icon: `<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"/>`,
+        colorClass: "text-primary-600",
+        linkColorClass: "text-primary-600 hover:text-primary-700"
+    }
+];
 ---
 
 <ContentLayout
@@ -18,99 +111,61 @@ import ContentLayout from "../layouts/ContentLayout.astro";
     </div>
 
     <div class="grid-2 mb-12">
-        <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-            <div class="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
-                </svg>
+        {mainInitiatives.map((initiative) => (
+            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                <div class={`w-16 h-16 bg-gradient-to-r ${initiative.colorClass} rounded-lg flex items-center justify-center mb-4`}>
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <Fragment set:html={initiative.icon} />
+                    </svg>
+                </div>
+                <h3 class={`text-xl font-semibold ${initiative.linkColorClass.split(' ')[0]} mb-3`}>{initiative.title}</h3>
+                <p class="text-gray-600 mb-4">{initiative.description}</p>
+                <a href={initiative.href} class={`${initiative.linkColorClass} font-semibold`}>Learn More →</a>
             </div>
-            <h3 class="text-xl font-semibold text-primary-600 mb-3">Scholarships</h3>
-            <p class="text-gray-600 mb-4">Since 1992, we've awarded over $372,100 in scholarships to 440 outstanding seniors pursuing higher education and trade careers.</p>
-            <a href="/scholarships" class="text-primary-600 hover:text-primary-700 font-semibold">Learn More →</a>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-            <div class="w-16 h-16 bg-gradient-to-r from-secondary-500 to-secondary-700 rounded-lg flex items-center justify-center mb-4">
-                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/>
-                    <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/>
-                </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-secondary-600 mb-3">Academic Classroom Grants</h3>
-            <p class="text-gray-600 mb-4">Supporting teachers with funding for innovative classroom projects and educational materials that enhance student learning.</p>
-            <a href="/academic-class-grants" class="text-secondary-600 hover:text-secondary-700 font-semibold">Learn More →</a>
-        </div>
+        ))}
     </div>
 
     <div class="content-section">
         <h2>Student Development Programs</h2>
         <div class="grid-3">
-            <div class="text-center bg-gray-50 rounded-lg p-6">
-                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
+            {studentPrograms.map((program) => (
+                <div class="text-center bg-gray-50 rounded-lg p-6">
+                    <div class={`w-12 h-12 ${program.colorClass} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                        <svg class={`w-6 h-6 ${program.linkColorClass.split(' ')[0]}`} fill="currentColor" viewBox="0 0 20 20">
+                            <Fragment set:html={program.icon} />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">{program.title}</h3>
+                    <p class="text-sm text-gray-600 mb-3">{program.description}</p>
+                    <a href={program.href} class={`${program.linkColorClass} text-sm font-medium`}>Learn More</a>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Academy of Scholars</h3>
-                <p class="text-sm text-gray-600 mb-3">Recognizing and supporting our highest achieving students</p>
-                <a href="/academy-of-scholars" class="text-primary-600 hover:text-primary-700 text-sm font-medium">Learn More</a>
-            </div>
-
-            <div class="text-center bg-gray-50 rounded-lg p-6">
-                <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
-                    </svg>
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Laws of Life</h3>
-                <p class="text-sm text-gray-600 mb-3">Essay competition promoting character and values</p>
-                <a href="/laws-of-life" class="text-accent-600 hover:text-accent-700 text-sm font-medium">Learn More</a>
-            </div>
-
-            <div class="text-center bg-gray-50 rounded-lg p-6">
-                <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-6 h-6 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
-                    </svg>
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2">PBIS Support</h3>
-                <p class="text-sm text-gray-600 mb-3">Positive Behavioral Interventions and Supports</p>
-                <a href="/pbis" class="text-secondary-600 hover:text-secondary-700 text-sm font-medium">Learn More</a>
-            </div>
+            ))}
         </div>
     </div>
 
     <div class="content-section">
         <h2>Community Enrichment</h2>
         <div class="grid-2">
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <h3 class="text-lg font-semibold text-primary-600 mb-3">GSF Book Clubs</h3>
-                <p class="text-gray-600 mb-4">Promoting literacy and reading comprehension through engaging book club programs for students of all ages.</p>
-                <a href="/gsf-book-clubs" class="text-primary-600 hover:text-primary-700 font-semibold">Learn More →</a>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <h3 class="text-lg font-semibold text-accent-600 mb-3">Little Free Library</h3>
-                <p class="text-gray-600 mb-4">Building community connections and promoting reading through our neighborhood book exchange program.</p>
-                <a href="/little-free-library" class="text-accent-600 hover:text-accent-700 font-semibold">Learn More →</a>
-            </div>
+            {communityEnrichment.map((item) => (
+                <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                    <h3 class={`text-lg font-semibold ${item.colorClass} mb-3`}>{item.title}</h3>
+                    <p class="text-gray-600 mb-4">{item.description}</p>
+                    <a href={item.href} class={`${item.linkColorClass} font-semibold`}>Learn More →</a>
+                </div>
+            ))}
         </div>
     </div>
 
     <div class="content-section">
         <h2>Student Empowerment</h2>
         <div class="grid-2">
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <h3 class="text-lg font-semibold text-secondary-600 mb-3">ROX Program</h3>
-                <p class="text-gray-600 mb-4">Ruling Our eXperiences - Empowering young women to make positive life choices and develop leadership skills.</p>
-                <a href="/rox" class="text-secondary-600 hover:text-secondary-700 font-semibold">Learn More →</a>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <h3 class="text-lg font-semibold text-primary-600 mb-3">Staff Spotlight</h3>
-                <p class="text-gray-600 mb-4">Recognizing and celebrating the outstanding educators who make a difference in our students' lives every day.</p>
-                <a href="/staff-spotlight" class="text-primary-600 hover:text-primary-700 font-semibold">Learn More →</a>
-            </div>
+            {studentEmpowerment.map((item) => (
+                <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                    <h3 class={`text-lg font-semibold ${item.colorClass} mb-3`}>{item.title}</h3>
+                    <p class="text-gray-600 mb-4">{item.description}</p>
+                    <a href={item.href} class={`${item.linkColorClass} font-semibold`}>Learn More →</a>
+                </div>
+            ))}
         </div>
     </div>
 
