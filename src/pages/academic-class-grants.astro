@@ -1,5 +1,319 @@
 ---
 import ContentLayout from "../layouts/ContentLayout.astro";
+
+interface Grant {
+    recipient: string;
+    project: string;
+}
+
+interface GrantCategory {
+    category: string;
+    grants: Grant[];
+}
+
+interface GrantYear {
+    year: string;
+    total: string;
+    categories: GrantCategory[];
+}
+
+const grantYears: GrantYear[] = [
+    {
+        year: "Fall 2024",
+        total: "$21,589.56",
+        categories: [
+            {
+                category: "GMS STEM Grants",
+                grants: [
+                    { recipient: "Derek Angeloni", project: "Laser Cutter/Engraving in Middle School STEM" },
+                    { recipient: "Derek Angeloni", project: "3D Printing in Middle School STEM" }
+                ]
+            },
+            {
+                category: "GIS/GMS STEM Grants",
+                grants: [
+                    { recipient: "Margie Seibert and Sean Mostov", project: "Funding for Entry into National Robotics Competition for Elementary & Middle School Teams" },
+                    { recipient: "Scott Aten, Sean Mostov", project: "Antweight-Plastic Division Combat Robotics Program Expansion" }
+                ]
+            },
+            {
+                category: "GWD STEM Grants",
+                grants: [
+                    { recipient: "Alexis Carris-Scelza and Lacey Lonis", project: "CKLA / STEM Manipulatives" },
+                    { recipient: "Brooke Schon", project: "Curricular Play - The Sensory Way!" }
+                ]
+            },
+            {
+                category: "GHS Group Grants",
+                grants: [
+                    { recipient: "Kory Smith", project: "Captain's Table" },
+                    { recipient: "Patty Berardi, Christina Blosco, and Jane Pramik", project: "Great Lakes Theater Co Workshops" }
+                ]
+            },
+            {
+                category: "GMS & GIS Group Grant",
+                grants: [
+                    { recipient: "Caitlyn Taylor and Megan Donahue", project: "Cross-Curricular Lesson Development for Math, Science, ELA and Social Studies" }
+                ]
+            },
+            {
+                category: "GIS Group Grants",
+                grants: [
+                    { recipient: "Sean Mostov and Wendy Shocklee", project: "Hands-on Science Through Outdoor Education" },
+                    { recipient: "Caitlyn Taylor and Sean Mostov", project: "Supporting Students with Disabilities through Active Learning and Physical Activity" }
+                ]
+            },
+            {
+                category: "GPS Group Grant",
+                grants: [
+                    { recipient: "Wrenn Nicodemo and April Vogley", project: "We're Booked! Spotlight on Literacy" }
+                ]
+            },
+            {
+                category: "GIS Spoonhower Orthodontics Health and Wellness Grant",
+                grants: [
+                    { recipient: "Sean Mostov", project: "Integrating Movement into the Classroom for ADHD Students" }
+                ]
+            },
+            {
+                category: "GHS Standard Grant",
+                grants: [
+                    { recipient: "Steve Donnelly and Tyler Worth", project: "E-sports Equipment" }
+                ]
+            },
+            {
+                category: "GMS Standard Grants",
+                grants: [
+                    { recipient: "Julie McMahan", project: "Academic Challenge Team" },
+                    { recipient: "Stacey Custer", project: "Grief and Grace: Art as a Path to Heal" },
+                    { recipient: "Amanda Popovich", project: "Speech-to-Text and Text-to-Speech Technologies" }
+                ]
+            },
+            {
+                category: "GIS Standard Grants",
+                grants: [
+                    { recipient: "Joe Trizzino", project: "Effects of Density on Liquids and Solids Project" },
+                    { recipient: "Madison Clark", project: "The Power of Vocabulary in Science and Social Studies Classrooms" },
+                    { recipient: "Pamela Fetchu", project: "Flocabulary" },
+                    { recipient: "Kristen Young", project: "Supplemental Novels to Our Curriculum" }
+                ]
+            },
+            {
+                category: "GPS Standard Grant",
+                grants: [
+                    { recipient: "Callie Hyde", project: "Sensory Liquid Tiles" }
+                ]
+            },
+            {
+                category: "GWD Standard Grant",
+                grants: [
+                    { recipient: "Heidi Sluss, MSPT", project: "United Disability Services Membership Access" }
+                ]
+            }
+        ]
+    },
+    {
+        year: "Fall 2023",
+        total: "$10,513.17",
+        categories: [
+            {
+                category: "GWD Group Grant",
+                grants: [
+                    { recipient: "Alexis Carris-Scelza, Lacey Lonis", project: "STEM & CKLA Manipulatives" }
+                ]
+            },
+            {
+                category: "GPS Group Grant",
+                grants: [
+                    { recipient: "Kelli Murray", project: "Fire Kids Tablets" }
+                ]
+            },
+            {
+                category: "GIS Group Grants",
+                grants: [
+                    { recipient: "Sean Mostov, Andrea Meffert", project: "Building Bridges: Inclusive Learning Through LEGO Kits" },
+                    { recipient: "Sean Mostov, Andrea Meffert", project: "LEGO Education BricQ" },
+                    { recipient: "Sean Mostov, Cady Taylor", project: "Multi-Sensory/Exploration Inclusive Science Classroom" }
+                ]
+            },
+            {
+                category: "GWD Standard Grants",
+                grants: [
+                    { recipient: "Danielle Wilkie", project: "Putting PBIS Into Practice" },
+                    { recipient: "Brooke Schon", project: "Bringing CKLA Into Classroom Play!" }
+                ]
+            },
+            {
+                category: "GPS Standard Grants",
+                grants: [
+                    { recipient: "Joy Dearing", project: "Seat Sacks" },
+                    { recipient: "Carli Schrecengost", project: "Privacy Folders" },
+                    { recipient: "Jenny Cochran", project: "ELA/Math Interventions" }
+                ]
+            },
+            {
+                category: "GIS Standard Grants",
+                grants: [
+                    { recipient: "Andrea Meffert", project: "Decodable Texts" },
+                    { recipient: "Wendy Shocklee", project: "Amplify Extension: The Titanic Passenger Profile Project" }
+                ]
+            }
+        ]
+    },
+    {
+        year: "Fall 2022",
+        total: "$12,982.32",
+        categories: [
+            {
+                category: "GMS Group Grant",
+                grants: [
+                    { recipient: "Sheri Murray, Allison Misutka", project: "Rollin in the Art Room" }
+                ]
+            },
+            {
+                category: "GPS Group Grants",
+                grants: [
+                    { recipient: "Wrenn Nicodemo, April Vogley", project: "Read, Lead, Succeed" },
+                    { recipient: "Melissa Stillion, Alexis Vittum, Heidi Sluss", project: "Chromebook Fliptouch Screens" }
+                ]
+            },
+            {
+                category: "GWD Group Grant",
+                grants: [
+                    { recipient: "Tess Maione, Katie DeSmith, Kimberly Sabo, Kristin Mason, Angela Hinkle", project: "Learning Through Pretend Play" }
+                ]
+            },
+            {
+                category: "GHS Spoonhower Health & Wellness Grants",
+                grants: [
+                    { recipient: "Marilyn Ruff", project: "Senior Commons Renewed Phase ONE" },
+                    { recipient: "Lisa Pafford", project: "Special Needs Equipment" }
+                ]
+            },
+            {
+                category: "GWD Standard Grants",
+                grants: [
+                    { recipient: "Jenny Cochran", project: "Literacy Interventions to Support CKLA, LETRS and Students on IEPs" },
+                    { recipient: "Alexis Carris-Scelza", project: "STEM Centers" },
+                    { recipient: "Danielle Wilkie", project: "New Curriculum, New Needs" },
+                    { recipient: "Jessica Baker", project: "Hands-on Building and Creating" },
+                    { recipient: "Trudy Zimmerman", project: "Music for Motivation" },
+                    { recipient: "Brooke Schon", project: "Fine Motor Mania" }
+                ]
+            },
+            {
+                category: "GPS Standard Grants",
+                grants: [
+                    { recipient: "Joy Dearing", project: "Bin Organizers" },
+                    { recipient: "Anna Krukemeyer", project: "Bin Organizers" }
+                ]
+            },
+            {
+                category: "GIS Standard Grants",
+                grants: [
+                    { recipient: "Sean Mostov", project: "Increasing Special Education/Small Group Instruction Classroom Supports" },
+                    { recipient: "Nicole Marchick", project: "Access to Literature for All" },
+                    { recipient: "Wendy Shocklee", project: "Supplemental Novels to Amplify 6th Grade" }
+                ]
+            },
+            {
+                category: "GMS Group Grant",
+                grants: [
+                    { recipient: "Katie Bowman & Josh Klein", project: "Announcement Equipment" }
+                ]
+            },
+            {
+                category: "GHS Group Grant",
+                grants: [
+                    { recipient: "Marilyn Ruff, Amanda Gamble, Kevin Granito, Kory Smith", project: "Student Services Hallway Mural" }
+                ]
+            }
+        ]
+    },
+    {
+        year: "Fall 2021",
+        total: "$9,500.97",
+        categories: [
+            {
+                category: "GWD Group Grant",
+                grants: [
+                    { recipient: "Multiple Teachers", project: "Block Play" }
+                ]
+            },
+            {
+                category: "GWD Spoonhower Health and Wellness Grant",
+                grants: [
+                    { recipient: "Heidi Sluss, MSPT", project: "Therapy Training Stairs" }
+                ]
+            },
+            {
+                category: "GWD Standard Grants",
+                grants: [
+                    { recipient: "Trudy Zimmerman", project: "100 Math Club" },
+                    { recipient: "Danielle Wilkie", project: "Making Mornings Manageable" },
+                    { recipient: "Brooke Schon", project: "Developing Skills for Budding Artists" },
+                    { recipient: "Jenny Cochran", project: "Learning Through Literacy Manipulatives" }
+                ]
+            },
+            {
+                category: "GIS Standard Grants",
+                grants: [
+                    { recipient: "Wendy Shocklee", project: "Survival: Literature Circles" },
+                    { recipient: "Andrea Meffert", project: "Integrating Technology Support" }
+                ]
+            },
+            {
+                category: "GMS Standard Grant",
+                grants: [
+                    { recipient: "Stacey Custer, Lori McCartney, Liz Willemin", project: "ROX Leadership Team" }
+                ]
+            },
+            {
+                category: "GHS Standard Grants",
+                grants: [
+                    { recipient: "Floyd Juszli", project: "3-D Printing in the Ceramics Lab" },
+                    { recipient: "Cory Potter", project: "Cultivating Independent Readers" },
+                    { recipient: "Natalie Tannehill", project: "Choice Reading Titles for Secondary Students" },
+                    { recipient: "Mark Tomecko", project: "Books for Underprivileged Students" }
+                ]
+            }
+        ]
+    }
+];
+
+interface SuccessStory {
+    title: string;
+    description: string;
+    imageSrc?: string;
+    imageAlt?: string;
+}
+
+const successStories: SuccessStory[] = [
+    {
+        title: "Building & Construction Materials",
+        description: "A 2021-2022 Green Developmental Preschool program grant provided the purchase of new building and construction materials. With these new materials students experimented with simple science concepts, such as balance and gravity, and practice early math skills, like sorting, creating patterns, and building shapes, all while expressing their creativity and learning to work cooperatively with their peers.",
+        imageSrc: "/gallery/preschool-grant.webp",
+        imageAlt: "Preschool students using building materials"
+    },
+    {
+        title: "Assistive Technology for Learning",
+        description: "Green Schools Foundation provided funding for an iPad, keyboard, and case for a special student, Jackson A. in Mrs. Meffert's Green Intermediate School classroom. This device has already supported his learning in so many ways. Assistive technology allows students who learn differently to shine. It enhances learning by helping them work around any challenges that stand in the way of fully understanding or engaging in their schoolwork.",
+        imageAlt: "Student using assistive technology"
+    },
+    {
+        title: "Therapy Training Stairs",
+        description: "Greenwood's Therapy Stairs is an exceptional piece of equipment paid for by funds through a teacher grant submitted by Heidi Sluss, Physical Therapist. The stairs will be instrumental in helping with mobility for our preschoolers and kindergartners.",
+        imageAlt: "Therapy training stairs equipment"
+    }
+];
+
+const guidelines = [
+    "Emphasis on student engagement",
+    "Creative and innovative",
+    "Green community-oriented",
+    "Beyond routine budgeted items",
+    "Promote academic excellence for all students"
+];
 ---
 
 <ContentLayout
@@ -12,289 +326,119 @@ import ContentLayout from "../layouts/ContentLayout.astro";
     ]}
 >
     <div class="content-section">
-        <h2>Empowering Educators, Enriching Learning</h2>
+        <h2>Supporting Innovation in the Classroom</h2>
         <p>
-            Green Schools Foundation's Academic Classroom Grants program provides direct funding to teachers and staff for innovative educational projects, classroom materials, and learning experiences that go beyond the traditional curriculum.
-        </p>
-        <p>
-            Since our founding, we have awarded thousands of dollars in classroom grants, supporting everything from STEM equipment and literacy programs to arts supplies and technology initiatives that enhance student engagement and achievement.
+            Green Schools Foundation invites any staff members to apply for grants to fund projects that will enhance student learning opportunities. Green Schools Foundation supports district staff in delivering quality instruction and enrichment for all students in Green Local Schools. Priority is given to those staff who are members of the Foundation.
         </p>
     </div>
 
     <div class="highlight-box">
-        <h2 class="text-2xl font-bold text-primary-600 mb-4">2024-2025 Grant Applications</h2>
+        <h2 class="text-2xl font-bold text-primary-600 mb-4">Grant Application</h2>
         <div class="grid-2">
             <div>
-                <h3 class="font-semibold text-gray-900 mb-3">Application Period</h3>
-                <div class="space-y-2 text-gray-700">
-                    <div class="flex items-center">
-                        <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
-                        </svg>
-                        <span><strong>Opens:</strong> September 1st</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
-                        </svg>
-                        <span><strong>Deadline:</strong> December 15th</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
-                        </svg>
-                        <span><strong>Awards Announced:</strong> February</span>
-                    </div>
-                </div>
+                <h3 class="font-semibold text-gray-900 mb-3">Grant Guidelines</h3>
+                <p class="text-gray-700 mb-4">Classroom grants guidelines when considering applying include:</p>
+                <ul class="space-y-2 text-gray-700">
+                    {guidelines.map((guideline) => (
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>{guideline}</span>
+                        </li>
+                    ))}
+                </ul>
             </div>
-            <div>
-                <h3 class="font-semibold text-gray-900 mb-3">Grant Information</h3>
-                <div class="space-y-2 text-gray-700">
-                    <div class="flex items-center">
-                        <svg class="w-5 h-5 text-accent-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                        </svg>
-                        <span><strong>Award Range:</strong> $100 - $2,000</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg class="w-5 h-5 text-accent-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
-                        </svg>
-                        <span><strong>Eligible:</strong> All Green Local Schools staff</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg class="w-5 h-5 text-accent-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
-                        </svg>
-                        <span><strong>Multiple applications</strong> encouraged</span>
-                    </div>
+            <div class="text-center flex flex-col justify-center">
+                <div class="w-20 h-20 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-10 h-10 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/>
+                    </svg>
                 </div>
+                <a href="mailto:greenschoolsfoundation@gmail.com?subject=Classroom Grant Application Request" class="button-primary">
+                    Request Application
+                </a>
+                <p class="text-sm text-gray-600 mt-3">Contact us to receive the current grant application form</p>
             </div>
         </div>
     </div>
 
+    <!-- Success Stories with Images -->
     <div class="content-section">
-        <h2>What We Fund</h2>
-        <div class="grid-2">
-            <div class="space-y-6">
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-gray-900 mb-2">Technology & Equipment</h3>
-                        <ul class="text-sm text-gray-600 list-none pl-0 [&>li]:mb-1">
-                            <li>Educational software and apps</li>
-                            <li>STEM equipment and robotics kits</li>
-                            <li>Interactive whiteboards and projectors</li>
-                            <li>Tablets and computer accessories</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-gray-900 mb-2">Curriculum Materials</h3>
-                        <ul class="text-sm text-gray-600 list-none pl-0 [&>li]:mb-1">
-                            <li>Books and reading materials</li>
-                            <li>Educational games and manipulatives</li>
-                            <li>Science lab supplies</li>
-                            <li>Art and craft materials</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-gray-900 mb-2">Field Trip Experiences</h3>
-                        <ul class="text-sm text-gray-600 list-none pl-0 [&>li]:mb-1">
-                            <li>Transportation costs</li>
-                            <li>Admission fees</li>
-                            <li>Educational program costs</li>
-                            <li>Overnight trip expenses</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="space-y-6">
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-gray-900 mb-2">Special Programs</h3>
-                        <ul class="text-sm text-gray-600 list-none pl-0 [&>li]:mb-1">
-                            <li>Guest speaker fees</li>
-                            <li>Workshop materials</li>
-                            <li>Competition entry fees</li>
-                            <li>Enrichment activities</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-gray-900 mb-2">Creative Projects</h3>
-                        <ul class="text-sm text-gray-600 list-none pl-0 [&>li]:mb-1">
-                            <li>Music instruments and equipment</li>
-                            <li>Drama and theater supplies</li>
-                            <li>Art exhibition materials</li>
-                            <li>Creative writing resources</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-gray-900 mb-2">Classroom Environment</h3>
-                        <ul class="text-sm text-gray-600 list-none pl-0 [&>li]:mb-1">
-                            <li>Flexible seating options</li>
-                            <li>Storage and organization systems</li>
-                            <li>Classroom decorations</li>
-                            <li>Learning station materials</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="content-section">
-        <h2>How to Apply</h2>
-        <div class="space-y-6">
-            <div class="flex items-start">
-                <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-semibold mr-4 mt-1">
-                    1
-                </div>
-                <div>
-                    <h3 class="font-semibold text-gray-900 mb-2">Develop Your Project</h3>
-                    <p class="text-gray-700">
-                        Identify a specific educational need or opportunity in your classroom or school. Consider how your project will directly benefit student learning and engagement.
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex items-start">
-                <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-semibold mr-4 mt-1">
-                    2
-                </div>
-                <div>
-                    <h3 class="font-semibold text-gray-900 mb-2">Complete the Application</h3>
-                    <p class="text-gray-700">
-                        Download and complete the grant application form. Include detailed information about your project, budget, timeline, and expected outcomes.
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex items-start">
-                <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-semibold mr-4 mt-1">
-                    3
-                </div>
-                <div>
-                    <h3 class="font-semibold text-gray-900 mb-2">Submit Your Application</h3>
-                    <p class="text-gray-700">
-                        Submit your completed application by the December 15th deadline. Late applications will not be considered.
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex items-start">
-                <div class="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-semibold mr-4 mt-1">
-                    4
-                </div>
-                <div>
-                    <h3 class="font-semibold text-gray-900 mb-2">Review & Award Process</h3>
-                    <p class="text-gray-700">
-                        Applications are reviewed by our board members and awards are announced in February. Recipients will be recognized at our Celebration of Education event.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="content-section">
-        <h2>Success Stories</h2>
+        <h2>Grant Success Stories</h2>
         <p class="mb-8">
-            Our classroom grants have supported countless innovative projects that have enhanced learning experiences for Green Local Schools students. Here are just a few examples of recently funded projects:
+            Our classroom grants have supported countless innovative projects that have enhanced learning experiences for Green Local Schools students. Here are some examples of how grant funding has made a difference:
         </p>
 
-        <div class="grid-2">
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"/>
-                    </svg>
+        <div class="space-y-8">
+            {successStories.map((story, index) => (
+                <div class={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-6 items-center bg-white rounded-lg shadow-lg p-6 border border-gray-200`}>
+                    {story.imageSrc ? (
+                        <div class="w-full md:w-1/3 flex-shrink-0">
+                            <img src={story.imageSrc} alt={story.imageAlt} class="rounded-lg w-full h-48 object-cover" />
+                        </div>
+                    ) : (
+                        <div class="w-full md:w-1/3 flex-shrink-0 h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                    )}
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">{story.title}</h3>
+                        <p class="text-gray-600">{story.description}</p>
+                    </div>
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-3">STEM Learning Stations</h3>
-                <p class="text-gray-600 text-sm mb-3">
-                    A 4th grade teacher received $1,500 to create interactive STEM learning stations, including coding robots and engineering challenge kits that increased student engagement by 40%.
-                </p>
-                <div class="text-primary-600 text-sm font-medium">Award: $1,500</div>
-            </div>
+            ))}
+        </div>
+    </div>
 
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-3">Classroom Library Expansion</h3>
-                <p class="text-gray-600 text-sm mb-3">
-                    High school English teachers collaborated to expand their classroom libraries with diverse, contemporary literature, resulting in a 25% increase in independent reading.
-                </p>
-                <div class="text-accent-600 text-sm font-medium">Award: $800</div>
-            </div>
+    <!-- Past Recipients -->
+    <div class="content-section">
+        <h2>Past Grant Recipients</h2>
+        <p class="mb-8">
+            We are proud to have supported hundreds of educators and their innovative classroom projects. Below are our recent grant recipients organized by school year.
+        </p>
 
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"/>
-                    </svg>
+        <div class="space-y-8">
+            {grantYears.map((yearData) => (
+                <div class="bg-gradient-to-r from-primary-600 to-accent-600 rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6 text-white">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-2xl font-bold">{yearData.year} Recipients</h3>
+                            <span class="text-xl font-semibold text-accent-200">{yearData.total} Total</span>
+                        </div>
+                        <div class="border-t border-white/20 pt-4">
+                            <div class="grid gap-4 md:grid-cols-2">
+                                {yearData.categories.map((category) => (
+                                    <div class="bg-white/10 rounded-lg p-4">
+                                        <h4 class="font-semibold text-accent-200 mb-2">{category.category}</h4>
+                                        <ul class="space-y-1 text-sm">
+                                            {category.grants.map((grant) => (
+                                                <li class="text-white/90">
+                                                    <span class="font-medium">{grant.recipient}:</span> "{grant.project}"
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-3">Science Lab Equipment</h3>
-                <p class="text-gray-600 text-sm mb-3">
-                    Middle school science teachers received funding for microscopes and lab equipment, enabling hands-on experiments that improved test scores by 15%.
-                </p>
-                <div class="text-secondary-600 text-sm font-medium">Award: $2,000</div>
-            </div>
+            ))}
+        </div>
+    </div>
 
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-3">Field Trip Adventures</h3>
-                <p class="text-gray-600 text-sm mb-3">
-                    Elementary classes visited the Cleveland Museum of Natural History, bringing their dinosaur unit to life and inspiring several students to pursue paleontology interests.
-                </p>
-                <div class="text-green-600 text-sm font-medium">Award: $600</div>
-            </div>
+    <!-- School Abbreviations Key -->
+    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">School Abbreviations</h3>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm">
+            <div><span class="font-medium">GHS</span> - Green High School</div>
+            <div><span class="font-medium">GMS</span> - Green Middle School</div>
+            <div><span class="font-medium">GIS</span> - Green Intermediate School</div>
+            <div><span class="font-medium">GPS</span> - Green Primary School</div>
+            <div><span class="font-medium">GWD</span> - Greenwood (Preschool/K)</div>
         </div>
     </div>
 
@@ -307,7 +451,7 @@ import ContentLayout from "../layouts/ContentLayout.astro";
             Request Application
         </a>
         <a href="/celebration-of-education" class="button-secondary">
-            See Past Recipients
+            See Past Award Ceremonies
         </a>
     </div>
 </ContentLayout>
