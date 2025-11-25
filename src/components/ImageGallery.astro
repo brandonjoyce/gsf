@@ -78,7 +78,7 @@ const galleryImages = [
                         {
                             galleryImages.map((image, index) => (
                                 <button
-                                    class={`gallery-thumb relative overflow-hidden rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg ${index === 0 ? "ring-2 ring-white active" : ""}`}
+                                    class={`gallery-thumb relative overflow-hidden rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg ${index === 0 ? "active" : ""}`}
                                     data-index={index}
                                     data-src={image.src}
                                     data-alt={image.alt}
@@ -102,9 +102,9 @@ const galleryImages = [
 
 <style>
     .gallery-thumb.active {
-        ring-width: 2px;
-        ring-color: rgb(255 255 255);
+        box-shadow: 0 0 0 2px rgb(255 255 255);
         transform: scale(1.05);
+        opacity: 1;
     }
 
     .gallery-thumb:not(.active) {
@@ -134,56 +134,67 @@ const galleryImages = [
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const mainImage = document.getElementById("main-gallery-image");
+        const mainImage = document.getElementById("main-gallery-image") as HTMLImageElement;
         const mainTitle = document.getElementById("main-gallery-title");
         const thumbnails = document.querySelectorAll(".gallery-thumb");
 
-        if (mainImage && mainTitle && thumbnails) {
-            thumbnails.forEach((thumb) => {
-                thumb.addEventListener("click", function () {
-                    const src = this.getAttribute("data-src");
-                    const alt = this.getAttribute("data-alt");
-                    const title = this.getAttribute("data-title");
-
-                    // Update main image
-                    mainImage.style.opacity = "0";
-                    setTimeout(() => {
-                        mainImage.src = src;
-                        mainImage.alt = alt;
-                        mainTitle.textContent = title;
-                        mainImage.style.opacity = "1";
-                    }, 250);
-
-                    // Update active state
-                    thumbnails.forEach((t) => t.classList.remove("active"));
-                    this.classList.add("active");
-                });
-            });
-
-            // Auto-rotate gallery every 5 seconds
+        if (mainImage && mainTitle && thumbnails.length > 0) {
             let currentIndex = 0;
-            const autoRotate = setInterval(() => {
-                currentIndex = (currentIndex + 1) % thumbnails.length;
-                thumbnails[currentIndex].click();
-            }, 5000);
+            let autoRotateInterval = 0;
+            let restartTimeout = 0;
 
-            // Pause auto-rotation when user interacts
-            thumbnails.forEach((thumb) => {
-                thumb.addEventListener("click", () => {
-                    clearInterval(autoRotate);
+            function updateGallery(index) {
+                const thumb = thumbnails[index];
+                const src = thumb.getAttribute("data-src");
+                const alt = thumb.getAttribute("data-alt");
+                const title = thumb.getAttribute("data-title");
+
+                mainImage.style.opacity = "0";
+                setTimeout(function() {
+                    mainImage.src = src || "";
+                    mainImage.alt = alt || "";
+                    mainTitle.textContent = title;
+                    mainImage.style.opacity = "1";
+                }, 250);
+
+                thumbnails.forEach(function(t) { t.classList.remove("active"); });
+                thumb.classList.add("active");
+                currentIndex = index;
+            }
+
+            function startAutoRotate() {
+                stopAutoRotate();
+                autoRotateInterval = window.setInterval(function() {
+                    const nextIndex = (currentIndex + 1) % thumbnails.length;
+                    updateGallery(nextIndex);
+                }, 5000);
+            }
+
+            function stopAutoRotate() {
+                if (autoRotateInterval) {
+                    window.clearInterval(autoRotateInterval);
+                    autoRotateInterval = 0;
+                }
+                if (restartTimeout) {
+                    window.clearTimeout(restartTimeout);
+                    restartTimeout = 0;
+                }
+            }
+
+            thumbnails.forEach(function(thumb, index) {
+                thumb.addEventListener("click", function () {
+                    stopAutoRotate();
+                    updateGallery(index);
+
                     // Restart auto-rotation after 10 seconds of no interaction
-                    setTimeout(() => {
-                        currentIndex = Array.from(thumbnails).findIndex((t) =>
-                            t.classList.contains("active"),
-                        );
-                        setInterval(() => {
-                            currentIndex =
-                                (currentIndex + 1) % thumbnails.length;
-                            thumbnails[currentIndex].click();
-                        }, 5000);
+                    restartTimeout = window.setTimeout(function() {
+                        startAutoRotate();
                     }, 10000);
                 });
             });
+
+            // Start auto-rotate on load
+            startAutoRotate();
         }
     });
 </script>
