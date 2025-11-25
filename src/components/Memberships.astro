@@ -5,30 +5,35 @@ const memberships = [
         price: "$5",
         description:
             "Support our mission with this entry-level membership perfect for students and young supporters.",
+        link: "https://donate.stripe.com/cN23dL37v2fg9ZScMQ"
     },
     {
         name: "Partner in Education",
         price: "$50",
         description:
             "Join as a Partner in Education and help us make a meaningful impact on local students.",
+        link: "https://donate.stripe.com/9AQ7u1cI5dXYb3WfZ4"
     },
     {
         name: "Merit Roll",
         price: "$75",
         description:
             "Recognition-level membership supporting academic excellence and student achievement.",
+        link: "https://donate.stripe.com/9AQbKh5fD9HIdc43cj"
     },
     {
         name: "Honor Roll",
         price: "$100",
         description:
             "Premium membership demonstrating your commitment to educational excellence.",
+        link: "https://donate.stripe.com/dR6cOl6jHcTU9ZS7sA"
     },
     {
         name: "Salutatorian",
         price: "$200",
         description:
             "Our highest individual membership tier, making the greatest impact on student success.",
+        link: "https://buy.stripe.com/3cIfZh3tI2ms5upbH60kE0c"
     },
 ];
 ---
@@ -65,9 +70,9 @@ const memberships = [
                             {membership.description}
                         </p>
 
-                        <button class="bg-primary-600 text-white border-0 px-8 py-3 rounded-lg font-medium cursor-pointer transition-all duration-200 w-full hover:bg-primary-700 hover:-translate-y-0.5">
+                        <a href={membership.link} target="_blank" rel="noopener noreferrer" class="bg-primary-600 text-white border-0 px-8 py-3 rounded-lg font-medium cursor-pointer transition-all duration-200 w-full hover:bg-primary-700 hover:-translate-y-0.5 inline-block text-center">
                             Choose This Level
-                        </button>
+                        </a>
                     </div>
                 ))
             }
