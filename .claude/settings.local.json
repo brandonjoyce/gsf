@@ -5,7 +5,9 @@
       "Bash(curl:*)",
       "Bash(npm run build:*)",
       "Bash(magick:*)",
-      "Bash(cwebp:*)"
+      "Bash(cwebp:*)",
+      "WebFetch(domain:www.greenschoolsfoundation.org)",
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []
