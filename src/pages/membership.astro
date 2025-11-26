@@ -1,5 +1,6 @@
 ---
 import ContentLayout from "../layouts/ContentLayout.astro";
+import Memberships from "../components/Memberships.astro";
 ---
 
 <ContentLayout
@@ -17,164 +18,23 @@ import ContentLayout from "../layouts/ContentLayout.astro";
         </p>
     </div>
 
-    <div class="grid-2 mb-12">
-        <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
-            <div class="text-center mb-6">
-                <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-10 h-10 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-bold text-primary-600 mb-2">Individual Membership</h3>
-                <p class="text-gray-600">Support our mission as an individual member</p>
-            </div>
-
-            <div class="space-y-4 mb-6">
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="text-gray-700">Newsletter updates</span>
-                </div>
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="text-gray-700">Voting rights</span>
-                </div>
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="text-gray-700">Invitation to exclusive events</span>
-                </div>
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="text-gray-700">Annual recognition</span>
-                </div>
-            </div>
-
-            <div class="text-center">
-                <div class="text-3xl font-bold text-primary-600 mb-2">$25</div>
-                <div class="text-gray-500 mb-4">per year</div>
-                <a href="mailto:greenschoolsfoundation@gmail.com?subject=Individual Membership" class="button-primary w-full block text-center">
-                    Join Now
-                </a>
-            </div>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-200 relative">
-            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div class="bg-accent-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                    Popular
-                </div>
-            </div>
-
-            <div class="text-center mb-6">
-                <div class="w-20 h-20 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-10 h-10 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-bold text-accent-600 mb-2">Family Membership</h3>
-                <p class="text-gray-600">Perfect for families supporting our schools</p>
-            </div>
-
-            <div class="space-y-4 mb-6">
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="text-gray-700">All individual benefits</span>
-                </div>
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="text-gray-700">Family recognition</span>
-                </div>
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="text-gray-700">Priority event seating</span>
-                </div>
-                <div class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-    </svg>
-                    <span class="text-gray-700">Special member pricing</span>
-                </div>
-            </div>
-
-            <div class="text-center">
-                <div class="text-3xl font-bold text-accent-600 mb-2">$50</div>
-                <div class="text-gray-500 mb-4">per year</div>
-                <a href="mailto:greenschoolsfoundation@gmail.com?subject=Family Membership" class="bg-accent-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-700 transition-colors w-full block text-center">
-                    Join Now
-                </a>
-            </div>
-        </div>
-    </div>
+<Memberships background="" />
 
     <div class="content-section">
-        <h2>Corporate & Business Memberships</h2>
-        <p class="mb-8">
-            Local businesses and organizations play a vital role in supporting education in our community. Our corporate membership program offers various levels of partnership to fit your organization's goals and budget.
+        <h2>Prefer to Mail Your Form?</h2>
+        <p>
+            Membership forms may be completed and mailed to <strong>PO Box 104, Green, Ohio 44232</strong> with cash or check. To complete your form online, please email completed forms to <a href="mailto:greenschoolsfoundation@gmail.com">greenschoolsfoundation@gmail.com</a> and complete the online payment above.
         </p>
-
-        <div class="grid-3">
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <h3 class="text-xl font-bold text-secondary-600 mb-4">Bronze Partner</h3>
-                <div class="text-2xl font-bold text-secondary-600 mb-4">$250</div>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li>• Logo on website</li>
-                    <li>• Newsletter mention</li>
-                    <li>• Event recognition</li>
-                    <li>• Tax deduction receipt</li>
-                </ul>
-                <div class="mt-6">
-                    <a href="mailto:greenschoolsfoundation@gmail.com?subject=Bronze Partnership" class="text-secondary-600 hover:text-secondary-700 font-semibold text-sm">
-                        Learn More →
-                    </a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <h3 class="text-xl font-bold text-primary-600 mb-4">Silver Partner</h3>
-                <div class="text-2xl font-bold text-primary-600 mb-4">$500</div>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li>• All Bronze benefits</li>
-                    <li>• Prominent logo placement</li>
-                    <li>• Social media mentions</li>
-                    <li>• Event table recognition</li>
-                    <li>• Partnership certificate</li>
-                </ul>
-                <div class="mt-6">
-                    <a href="mailto:greenschoolsfoundation@gmail.com?subject=Silver Partnership" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
-                        Learn More →
-                    </a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <h3 class="text-xl font-bold text-accent-600 mb-4">Gold Partner</h3>
-                <div class="text-2xl font-bold text-accent-600 mb-4">$1000+</div>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li>• All Silver benefits</li>
-                    <li>• Premium logo placement</li>
-                    <li>• Speaking opportunities</li>
-                    <li>• Named scholarship option</li>
-                    <li>• Board meeting invitation</li>
-                </ul>
-                <div class="mt-6">
-                    <a href="mailto:greenschoolsfoundation@gmail.com?subject=Gold Partnership" class="text-accent-600 hover:text-accent-700 font-semibold text-sm">
-                        Learn More →
-                    </a>
-                </div>
-            </div>
+        <p>
+            If you have membership questions, please contact Mark Herdlick at <a href="tel:3306087773">(330) 608-7773</a> or email <a href="mailto:m.herdlickgsf2@yahoo.com">m.herdlickgsf2@yahoo.com</a>.
+        </p>
+        <div class="flex flex-wrap gap-4 mt-6">
+            <a href="/documents/general-membership-form.pdf" target="_blank" class="button-primary">
+                Download General Membership Form
+            </a>
+            <a href="/documents/staff-membership-form.pdf" target="_blank" class="button-secondary">
+                Download Staff Membership Form
+            </a>
         </div>
     </div>
 
