@@ -4,7 +4,8 @@
       "Bash(find:*)",
       "Bash(curl:*)",
       "Bash(npm run build:*)",
-      "Bash(magick:*)"
+      "Bash(magick:*)",
+      "Bash(cwebp:*)"
     ],
     "deny": [],
     "ask": []

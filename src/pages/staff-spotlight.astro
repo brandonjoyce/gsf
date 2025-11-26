@@ -1,0 +1,178 @@
+---
+import ContentLayout from "../layouts/ContentLayout.astro";
+---
+
+<ContentLayout
+    title="Spotlight on Staff"
+    description="Recognizing outstanding staff members throughout the Green Local School District."
+    showBreadcrumbs={true}
+    breadcrumbs={[
+        { name: "Foundation Initiatives", href: "/foundation-initiatives" },
+        { name: "Staff Spotlight", href: "/staff-spotlight" }
+    ]}
+>
+    <div class="content-section">
+        <h2>Celebrating Our Educators</h2>
+        <p>
+            The Green Schools Foundation proudly sponsors the Spotlight on Staff program, recognizing outstanding staff members throughout the district at monthly Board of Education meetings. Staff members are selected through nominations from district personnel, parents, students, and community members.
+        </p>
+        <p>
+            This program highlights the dedication, hard work, and positive impact that our educators and staff have on the students and community of Green Local Schools every day.
+        </p>
+    </div>
+
+    <div class="highlight-box">
+        <h2 class="text-2xl font-bold text-primary-600 mb-4">How It Works</h2>
+        <div class="grid-2">
+            <div>
+                <h3 class="font-semibold text-gray-900 mb-3">Nomination Process</h3>
+                <ul class="space-y-2 text-gray-700 text-sm">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Nominations accepted from district personnel</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Parents can nominate staff members</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Students can recognize their teachers</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-primary-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Community members welcome to participate</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold text-gray-900 mb-3">Recognition</h3>
+                <ul class="space-y-2 text-gray-700 text-sm">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-accent-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <span>Honored at monthly Board of Education meetings</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-accent-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <span>Public acknowledgment of contributions</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-accent-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <span>Sponsored by Green Schools Foundation</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>2024-2025 Spotlight on Staff Recipients</h2>
+        <p class="mb-6">
+            We are proud to recognize the following staff members who have been honored this school year for their exceptional dedication to our students and schools.
+        </p>
+        <img
+            src="/images/staff-spotlight/sos-september-2024.webp"
+            alt="September 2024 Spotlight on Staff recipient recognized at Board of Education meeting"
+            class="rounded-lg shadow-lg w-full mb-6"
+        />
+        <p class="text-sm text-gray-600 text-center italic">
+            September 2024 Spotlight on Staff recipient honored at the Board of Education meeting.
+        </p>
+    </div>
+
+    <div class="highlight-box">
+        <h2 class="text-2xl font-bold text-primary-600 mb-4">Why Recognition Matters</h2>
+        <div class="grid-3">
+            <div class="text-center">
+                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-gray-900 text-sm mb-2">Appreciation</h3>
+                <p class="text-xs text-gray-600">Shows our educators they are valued</p>
+            </div>
+            <div class="text-center">
+                <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-gray-900 text-sm mb-2">Community</h3>
+                <p class="text-xs text-gray-600">Strengthens school-community bonds</p>
+            </div>
+            <div class="text-center">
+                <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-6 h-6 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-gray-900 text-sm mb-2">Excellence</h3>
+                <p class="text-xs text-gray-600">Celebrates dedication to students</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Nominate a Staff Member</h2>
+        <p>
+            Do you know a teacher, administrator, or staff member who goes above and beyond for students? We encourage you to nominate them for the Spotlight on Staff program. Your nomination helps us recognize the incredible people who make Green Local Schools a great place to learn.
+        </p>
+        <div class="bg-gray-50 rounded-lg p-6 mt-6">
+            <h3 class="font-semibold text-gray-900 mb-3">What to Include in Your Nomination:</h3>
+            <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                    <span class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                        <span class="text-primary-600 text-xs font-semibold">1</span>
+                    </span>
+                    <span>The staff member's name and position</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                        <span class="text-primary-600 text-xs font-semibold">2</span>
+                    </span>
+                    <span>Your relationship to them (parent, student, colleague, etc.)</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                        <span class="text-primary-600 text-xs font-semibold">3</span>
+                    </span>
+                    <span>Specific examples of how they've made a positive impact</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                        <span class="text-primary-600 text-xs font-semibold">4</span>
+                    </span>
+                    <span>Why you believe they deserve recognition</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-section text-center">
+        <h2>Submit a Nomination</h2>
+        <p class="mb-6">
+            Help us celebrate the outstanding staff members who make a difference in our schools every day.
+        </p>
+        <a href="mailto:greenschoolsfoundation@gmail.com?subject=Spotlight on Staff Nomination" class="button-primary mr-4">
+            Nominate Someone
+        </a>
+        <a href="/foundation-initiatives" class="button-secondary">
+            See All Initiatives
+        </a>
+    </div>
+</ContentLayout>
