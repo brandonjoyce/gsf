@@ -8,7 +8,8 @@
       "Bash(cwebp:*)",
       "WebFetch(domain:www.greenschoolsfoundation.org)",
       "Bash(python3:*)",
-      "WebFetch(domain:sliceapalooza.com)"
+      "WebFetch(domain:sliceapalooza.com)",
+      "Bash(sips:*)"
     ],
     "deny": [],
     "ask": []
