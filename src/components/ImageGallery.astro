@@ -7,6 +7,7 @@ const galleryImages = [
         src: "/gallery/scholarships-2025.webp",
         alt: "2025 Green Schools Foundation Scholarship Recipients",
         title: "Scholarships",
+        fit: "contain",
     },
     {
         src: "/gallery/academy-of-scholars.webp",
@@ -54,7 +55,7 @@ const galleryImages = [
                                 id="main-gallery-image"
                                 src={galleryImages[0].src}
                                 alt={galleryImages[0].alt}
-                                class="w-full h-64 md:h-80 lg:h-96 object-cover transition-all duration-500"
+                                class={`w-full h-64 md:h-80 lg:h-96 transition-all duration-500 ${galleryImages[0].fit === "contain" ? "object-contain" : "object-cover"}`}
                             />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
@@ -83,6 +84,7 @@ const galleryImages = [
                                     data-src={image.src}
                                     data-alt={image.alt}
                                     data-title={image.title}
+                                    data-fit={image.fit || "cover"}
                                 >
                                     <img
                                         src={image.src}
@@ -148,12 +150,15 @@ const galleryImages = [
                 const src = thumb.getAttribute("data-src");
                 const alt = thumb.getAttribute("data-alt");
                 const title = thumb.getAttribute("data-title");
+                const fit = thumb.getAttribute("data-fit") || "cover";
 
                 mainImage.style.opacity = "0";
                 setTimeout(function() {
                     mainImage.src = src || "";
                     mainImage.alt = alt || "";
                     mainTitle.textContent = title;
+                    mainImage.classList.remove("object-cover", "object-contain");
+                    mainImage.classList.add(fit === "contain" ? "object-contain" : "object-cover");
                     mainImage.style.opacity = "1";
                 }, 250);
 

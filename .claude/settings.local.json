@@ -9,7 +9,9 @@
       "WebFetch(domain:www.greenschoolsfoundation.org)",
       "Bash(python3:*)",
       "WebFetch(domain:sliceapalooza.com)",
-      "Bash(sips:*)"
+      "Bash(sips:*)",
+      "Bash(ls:*)",
+      "Bash(pip3 install:*)"
     ],
     "deny": [],
     "ask": []

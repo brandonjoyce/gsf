@@ -19,6 +19,95 @@ interface GrantYear {
 
 const grantYears: GrantYear[] = [
     {
+        year: "Fall 2025",
+        total: "$22,833.41",
+        categories: [
+            {
+                category: "GHS STEM Grant",
+                grants: [
+                    { recipient: "Colleen VanNatta and Justin Speight", project: "I Fly - Air Force JROTC" }
+                ]
+            },
+            {
+                category: "GMS STEM Grants",
+                grants: [
+                    { recipient: "Derek Angeloni", project: "Drone-based Coding and Career Tech Exploration" },
+                    { recipient: "Sean Mostov", project: "Robotics Competition Arenas" },
+                    { recipient: "Kristin Bochert", project: "STEAM Classroom Resources for Coding" }
+                ]
+            },
+            {
+                category: "GES STEM Grants",
+                grants: [
+                    { recipient: "Margie Seibert and Megan Bianchi", project: "Doubling Down on Hands-On Robotics and Coding Access" },
+                    { recipient: "Scott Aten and Margie Seibert", project: "VEXIQ Competition Game" }
+                ]
+            },
+            {
+                category: "GES Group Grant",
+                grants: [
+                    { recipient: "Jakob Knuth and Alaina Starr", project: "GES Quaver Music Supplement" }
+                ]
+            },
+            {
+                category: "GMS Group Grants",
+                grants: [
+                    { recipient: "Sean Mostov and Amanda Hartman", project: "Axolotl Habitat" },
+                    { recipient: "Katie Bowman and Derek Angeloni", project: "PBIS Magnets for Teaching Tools" },
+                    { recipient: "Sean Mostov and Amanda Hartman", project: "Science Escape Rooms" }
+                ]
+            },
+            {
+                category: "GES Standard Grants",
+                grants: [
+                    { recipient: "Anna Krukemeyer", project: "Critical Thinking Games for Gifted Learners" },
+                    { recipient: "Callie Hyde and Carli Schrecengost", project: "Critical Thinking Games for Gifted Learners" },
+                    { recipient: "Alicia Sobieski", project: "Fidget Games - Teaching Reading Skills" },
+                    { recipient: "Jenny Cochran", project: "Multisensory Learning" },
+                    { recipient: "Irish Kuwatch", project: "Really Reading!" },
+                    { recipient: "Lisa Armelie", project: "UDS Toy Resources" },
+                    { recipient: "Vanessa Vaccaro", project: "Voices at Play: AAC Communication Board" }
+                ]
+            },
+            {
+                category: "GHS Standard Grants",
+                grants: [
+                    { recipient: "Michael Owen", project: "Academic Challenge Team Buzzer System" },
+                    { recipient: "Victoria Peplin", project: "Fisheries Specialist, OSU" },
+                    { recipient: "Rebecca Jordan", project: "Mental Health Support" }
+                ]
+            },
+            {
+                category: "GMS Standard Grants",
+                grants: [
+                    { recipient: "Charlee Brooks-Quinn", project: "Detecting Epicenters of Earthquakes" },
+                    { recipient: "Joseph Trizzino", project: "Edpuzzle" },
+                    { recipient: "Amanda Hartman", project: "Glowing Marble Run Kits" },
+                    { recipient: "Sean Mostov", project: "Hands-on and Sensory Learning Materials" },
+                    { recipient: "Sarah Sears", project: "Refugee Novel Unit and Website Project" },
+                    { recipient: "Stacey Custer and Lori McCartney", project: "ROX Leadership Program" },
+                    { recipient: "Wendy Shocklee", project: "Play to Learn: Strengthening Literacy Through Vocabulary Enrichment" }
+                ]
+            },
+            {
+                category: "GPS Standard Grants",
+                grants: [
+                    { recipient: "Jessica Baker", project: "Boogie Boards for Early Literacy" },
+                    { recipient: "Danielle Wilkie", project: "Every Mind Matters" },
+                    { recipient: "Brooke Schon", project: "For the Love of Literacy" },
+                    { recipient: "Alana Stevens", project: "Kindergarten Kitchen Play" },
+                    { recipient: "Stephanie Ellis", project: "Kindergarten Sensory Play" }
+                ]
+            },
+            {
+                category: "GPS/GES Standard Grant",
+                grants: [
+                    { recipient: "Andrea Meffert", project: "Science of Reading MTSS Teaching Materials" }
+                ]
+            }
+        ]
+    },
+    {
         year: "Fall 2024",
         total: "$21,589.56",
         categories: [
@@ -290,10 +379,10 @@ interface SuccessStory {
 
 const successStories: SuccessStory[] = [
     {
-        title: "Building & Construction Materials",
-        description: "A 2021-2022 Green Developmental Preschool program grant provided the purchase of new building and construction materials. With these new materials students experimented with simple science concepts, such as balance and gravity, and practice early math skills, like sorting, creating patterns, and building shapes, all while expressing their creativity and learning to work cooperatively with their peers.",
-        imageSrc: "/gallery/preschool-grant.webp",
-        imageAlt: "Preschool students using building materials"
+        title: "Vocabulary Games",
+        description: "\"My students are enjoying the vocabulary games every Friday during our PAWS time. They are being enriched and taking a break from electronics. It is great to see their interaction with each other and their creativity.\" — Wendy Shocklee",
+        imageSrc: "/images/vocabulary-games.webp",
+        imageAlt: "Students playing vocabulary games in classroom"
     },
     {
         title: "Assistive Technology for Learning",
@@ -437,9 +526,10 @@ const guidelines = [
     <!-- School Abbreviations Key -->
     <div class="bg-gray-50 rounded-lg p-6 mb-8">
         <h3 class="font-semibold text-gray-900 mb-3">School Abbreviations</h3>
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
             <div><span class="font-medium">GHS</span> - Green High School</div>
             <div><span class="font-medium">GMS</span> - Green Middle School</div>
+            <div><span class="font-medium">GES</span> - Green Elementary School</div>
             <div><span class="font-medium">GIS</span> - Green Intermediate School</div>
             <div><span class="font-medium">GPS</span> - Green Primary School</div>
             <div><span class="font-medium">GWD</span> - Greenwood (Preschool/K)</div>
