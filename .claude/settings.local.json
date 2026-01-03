@@ -14,7 +14,8 @@
       "Bash(pip3 install:*)",
       "Bash(unzip:*)",
       "WebSearch",
-      "WebFetch(domain:greenareachamber.org)"
+      "WebFetch(domain:greenareachamber.org)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []
