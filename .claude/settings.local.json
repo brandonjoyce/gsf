@@ -15,7 +15,20 @@
       "Bash(unzip:*)",
       "WebSearch",
       "WebFetch(domain:greenareachamber.org)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "WebFetch(domain:www.uppercrustoh.com)",
+      "WebFetch(domain:www.pizzahut.com)",
+      "WebFetch(domain:www.hungryhowies.com)",
+      "WebFetch(domain:myguiseppes.com)",
+      "WebFetch(domain:kittlesbrickovenpub.com)",
+      "WebFetch(domain:dechecospizzeria.com)",
+      "Bash(file:*)",
+      "WebFetch(domain:seeklogo.com)",
+      "WebFetch(domain:www.doordash.com)",
+      "WebFetch(domain:slicelife.com)",
+      "WebFetch(domain:1000logos.net)",
+      "WebFetch(domain:www.yelp.com)",
+      "WebFetch(domain:www.toasttab.com)"
     ],
     "deny": [],
     "ask": []
