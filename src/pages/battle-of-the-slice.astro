@@ -11,6 +11,16 @@ import ContentLayout from "../layouts/ContentLayout.astro";
         { name: "Battle of the Slice", href: "/battle-of-the-slice" }
     ]}
 >
+    <!-- Sticky Buy Tickets Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="#tickets" class="inline-flex items-center justify-center px-6 py-4 text-lg font-bold text-white bg-primary-600 hover:bg-primary-700 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105 animate-pulse hover:animate-none">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+            </svg>
+            <span>Buy Tickets</span>
+        </a>
+    </div>
+
     <!-- Hero Section with Logo -->
     <div class="text-center mb-12">
         <img
@@ -23,190 +33,501 @@ import ContentLayout from "../layouts/ContentLayout.astro";
         </p>
     </div>
 
-    <!-- Event Details Box -->
-    <div class="highlight-box mb-12">
-        <h2 class="text-2xl font-bold text-primary-600 mb-6 text-center">Event Details</h2>
-        <div class="grid-2">
-            <div>
-                <div class="space-y-4 text-gray-700">
-                    <div class="flex items-center">
-                        <svg class="w-6 h-6 text-primary-500 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
-                        </svg>
-                        <span><strong>Date:</strong> Feb 28th</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg class="w-6 h-6 text-primary-500 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
-                        </svg>
-                        <span><strong>Time:</strong> 11 AM to 6PM</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg class="w-6 h-6 text-primary-500 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                        </svg>
-                        <span><strong>Location:</strong> <a href="https://maps.app.goo.gl/3MThiNGhZ49SAV9m6" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Green Middle School and City Core building</a></span>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <p class="text-lg font-semibold text-gray-900 mb-2">Tickets Available Now!</p>
-                <p class="text-gray-700 mb-4">
-                    Get your tickets early and save. All proceeds support Green students!
-                </p>
-                <!-- TODO: Replace href with actual Stripe checkout link -->
-                <a href="#buy-tickets" class="inline-flex items-center justify-center px-8 py-4 text-xl font-bold text-white bg-primary-600 hover:bg-primary-700 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
-                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
-                    </svg>
-                    Buy Tickets
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- What to Expect -->
+    <!-- ============================================ -->
+    <!-- SECTION 1: About the Event & Participating Businesses -->
+    <!-- ============================================ -->
     <div class="content-section">
-        <h2>What to Expect</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Local Pizzerias</h3>
-                <p class="text-gray-600 text-sm">
-                    Sample slices from the area's best pizza shops and vote for your favorite!
-                </p>
-            </div>
+        <h2>About the Event</h2>
+        <p class="text-gray-700 mb-8">
+            Battle of the Slice is a community celebration bringing together local pizzerias, ice cream shops, family activities, and live performances. The Green Schools Foundation is proud to support this event, with all proceeds benefiting scholarships, academic classroom grants, and educational programs for Green students. Join us for a day of delicious food, fun activities, and community spirit!
+        </p>
 
-            <div class="text-center">
-                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
+        <!-- Pizza Shops -->
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Participating Pizza Shops</h3>
+    <p class="text-gray-600 mb-6">Sample slices includes favorites like these local pizzerias and vote for your favorite!</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
+            <a href="https://www.uppercrustoh.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-16 flex items-center justify-center mb-2">
+                    <span class="text-lg font-bold text-gray-800">Upper Crust</span>
+                </div>
+                <span class="text-xs text-primary-600">Visit Website →</span>
+            </a>
+            <a href="https://www.pizzahut.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-16 flex items-center justify-center mb-2">
+                    <span class="text-lg font-bold text-gray-800">Pizza Hut</span>
+                </div>
+                <span class="text-xs text-primary-600">Visit Website →</span>
+            </a>
+            <a href="https://www.hungryhowies.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-16 flex items-center justify-center mb-2">
+                    <span class="text-lg font-bold text-gray-800">Hungry Howie's</span>
+                </div>
+                <span class="text-xs text-primary-600">Visit Website →</span>
+            </a>
+            <a href="https://myguiseppes.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-16 flex items-center justify-center mb-2">
+                    <span class="text-lg font-bold text-gray-800">Guiseppe's</span>
+                </div>
+                <span class="text-xs text-primary-600">Visit Website →</span>
+            </a>
+            <a href="https://kittlesbrickovenpub.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-16 flex items-center justify-center mb-2">
+                    <span class="text-lg font-bold text-gray-800">Kittle's Brick Oven</span>
+                </div>
+                <span class="text-xs text-primary-600">Visit Website →</span>
+            </a>
+            <a href="https://dechecospizzeria.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-16 flex items-center justify-center mb-2">
+                    <span class="text-lg font-bold text-gray-800">DeCheco's</span>
+                </div>
+                <span class="text-xs text-primary-600">Visit Website →</span>
+            </a>
+        </div>
+        <p class="text-center text-gray-500 italic -mt-6 mb-10">...and more to come!</p>
+
+        <!-- Ice Cream Shops -->
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Ice Cream & Desserts</h3>
+        <p class="text-gray-600 mb-6">Cool down with sweet treats from these local favorites!</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
+            <a href="https://www.pavscreamery.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-16 flex items-center justify-center mb-2">
+                    <span class="text-lg font-bold text-gray-800">Pav's</span>
+                </div>
+                <span class="text-xs text-primary-600">Visit Website →</span>
+            </a>
+            <a href="https://handelsicecream.com/store/green/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-16 flex items-center justify-center mb-2">
+                    <span class="text-lg font-bold text-gray-800">Handel's</span>
+                </div>
+                <span class="text-xs text-primary-600">Visit Website →</span>
+            </a>
+            <a href="https://www.dairyqueen.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-16 flex items-center justify-center mb-2">
+                    <span class="text-lg font-bold text-gray-800">Dairy Queen</span>
+                </div>
+                <span class="text-xs text-primary-600">Visit Website →</span>
+            </a>
+            <a href="https://www.waylonshandcrafted.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-16 flex items-center justify-center mb-2">
+                    <span class="text-lg font-bold text-gray-800">Waylon's</span>
+                </div>
+                <span class="text-xs text-primary-600">Visit Website →</span>
+            </a>
+            <a href="https://www.instagram.com/sicilysitalianicebox/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-16 flex items-center justify-center mb-2">
+                    <span class="text-lg font-bold text-gray-800">Sicily's Italian Icebox</span>
+                </div>
+                <span class="text-xs text-primary-600">Visit Instagram →</span>
+            </a>
+        </div>
+
+        <!-- Activities -->
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Activities for All Ages</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+            <div class="bg-yellow-50 rounded-lg p-4 text-center border border-yellow-200">
+                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                     </svg>
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Family Fun</h3>
-                <p class="text-gray-600 text-sm">
-                    Games and activities for all ages make this a perfect family outing!
-                </p>
+                <span class="font-semibold text-gray-800">Bounce Houses</span>
             </div>
-
-            <div class="text-center">
-                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/>
+            <div class="bg-pink-50 rounded-lg p-4 text-center border border-pink-200">
+                <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                     </svg>
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Support Students</h3>
-                <p class="text-gray-600 text-sm">
-                    All proceeds support scholarships, grants, and programs for Green students.
+                <span class="font-semibold text-gray-800">Balloon Art</span>
+            </div>
+            <div class="bg-purple-50 rounded-lg p-4 text-center border border-purple-200">
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9c.83 0 1.5-.67 1.5-1.5S7.83 8 7 8s-1.5.67-1.5 1.5S6.17 11 7 11zm10 0c.83 0 1.5-.67 1.5-1.5S17.83 8 17 8s-1.5.67-1.5 1.5.67 1.5 1.5 1.5zm-5 5.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                    </svg>
+                </div>
+                <span class="font-semibold text-gray-800">Face Painting</span>
+            </div>
+            <div class="bg-orange-50 rounded-lg p-4 text-center border border-orange-200">
+                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l4.59-4.58L18 11l-6 6z"/>
+                    </svg>
+                </div>
+                <span class="font-semibold text-gray-800">Sand Art</span>
+            </div>
+            <div class="bg-green-50 rounded-lg p-4 text-center border border-green-200">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                    </svg>
+                </div>
+                <span class="font-semibold text-gray-800">High School Club Activities</span>
+            </div>
+            <div class="bg-blue-50 rounded-lg p-4 text-center border border-blue-200">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                </div>
+                <span class="font-semibold text-gray-800">Sports Clinics</span>
+            </div>
+        </div>
+
+        <!-- Performances -->
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Live Performances</h3>
+        <p class="text-gray-600 mb-6">Enjoy entertainment from Green Local Schools students!</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-lg p-6 text-center border border-primary-200">
+                <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow">
+                    <svg class="w-7 h-7 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                    </svg>
+                </div>
+                <h4 class="font-bold text-gray-900">6th Grade Choir</h4>
+            </div>
+            <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-lg p-6 text-center border border-primary-200">
+                <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow">
+                    <svg class="w-7 h-7 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+                    </svg>
+                </div>
+                <h4 class="font-bold text-gray-900">GMS Musical Pop-Up</h4>
+            </div>
+            <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-lg p-6 text-center border border-primary-200">
+                <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow">
+                    <svg class="w-7 h-7 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                    </svg>
+                </div>
+                <h4 class="font-bold text-gray-900">GHS A Capella</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: Green Area Chamber -->
+    <!-- ============================================ -->
+    <div class="highlight-box mb-12">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+            <div class="flex-shrink-0">
+                <div class="w-32 h-32 bg-white rounded-lg shadow flex items-center justify-center p-4">
+                    <span class="text-xl font-bold text-center text-gray-800 leading-tight">Green Area Chamber</span>
+                </div>
+            </div>
+            <div class="flex-1 text-center md:text-left">
+                <h2 class="text-2xl font-bold text-primary-600 mb-4">Green Area Chamber of Commerce</h2>
+                <p class="text-gray-700 mb-4">
+                    The Green Area Chamber is proud to partner with the Green Schools Foundation, Green Local Schools, and the City of Green for this community event. The Chamber is coordinating all of the tables this year and we are very excited to be a part of this collaboration!
                 </p>
+                <p class="text-gray-700 italic mb-6">
+                    "Taste your way through the city's best pizzas, enjoy games and activities for all ages, and support student success—one delicious slice at a time!"
+                </p>
+                <div class="bg-white rounded-lg p-4 border border-gray-200">
+                    <h3 class="font-semibold text-gray-900 mb-2">Business Table Opportunity</h3>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Are you a business interested in participating? Tables are available for purchase as a fundraiser for the Chamber.
+                    </p>
+                    <a href="https://www.zeffy.com/en-US/ticketing/battle-of-the-slice" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-secondary-700 hover:bg-secondary-800 rounded-lg transition-colors">
+                        Purchase a Business Table
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <a href="https://greenareachamber.org/about/" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 font-semibold">
+                        Learn more about the Green Area Chamber →
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- How It Works -->
-    <div class="bg-gray-50 rounded-xl p-8 mb-12">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">How It Works</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="text-center">
-                <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">1</div>
-                <h4 class="font-semibold text-gray-900 mb-1">Get Your Ticket</h4>
-                <p class="text-gray-600 text-sm">Purchase tickets online or at the door</p>
-            </div>
-            <div class="text-center">
-                <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">2</div>
-                <h4 class="font-semibold text-gray-900 mb-1">Sample Slices</h4>
-                <p class="text-gray-600 text-sm">Taste pizza from participating local shops</p>
-            </div>
-            <div class="text-center">
-                <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">3</div>
-                <h4 class="font-semibold text-gray-900 mb-1">Cast Your Vote</h4>
-                <p class="text-gray-600 text-sm">Vote for your favorite pizza</p>
-            </div>
-            <div class="text-center">
-                <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">4</div>
-                <h4 class="font-semibold text-gray-900 mb-1">Crown the Winner</h4>
-                <p class="text-gray-600 text-sm">Help crown the Battle of the Slice champion!</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Get Involved Section -->
+    <!-- ============================================ -->
+    <!-- SECTION 3: The Core Venue -->
+    <!-- ============================================ -->
     <div class="content-section">
-        <h2>Get Involved</h2>
-        <div class="grid-2">
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        <h2>The CORE</h2>
+        <div class="bg-gray-50 rounded-xl p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Center of Recreation & Education</h3>
+                    <p class="text-gray-700 mb-4">
+                        <strong>1717 Steese Road, Green, OH</strong>
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Battle of the Slice takes place at The CORE, Green's premier recreation facility. Come check out this amazing community space!
+                    </p>
+                    <ul class="space-y-3 text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Main Cafeteria:</strong> Pizza vendors and food service</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Middle School Gym:</strong> Activities and entertainment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Main Gym:</strong> Bounce house and business booths</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Turf Field:</strong> High school sports clinics</span>
+                        </li>
+                    </ul>
+                    <a href="https://www.cityofgreen.org/688/The-CORE-Center-of-Recreation-Education" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold">
+                        Learn more about The CORE
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                         </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900">Pizzerias</h3>
+                    </a>
                 </div>
-                <p class="text-gray-600 mb-4">
-                    Are you a local pizzeria interested in showcasing your best slice? Join the competition and gain exposure to hundreds of pizza lovers!
-                </p>
-                <a href="mailto:greenschoolsfoundation@gmail.com?subject=Battle of the Slice - Pizzeria Participation" class="text-primary-600 hover:text-primary-700 font-semibold">
-                    Register Your Pizzeria →
-                </a>
+                <div class="flex items-center justify-center">
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center w-full">
+                        <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Get Directions</h4>
+                        <p class="text-gray-600 text-sm mb-4">1717 Steese Road<br/>Green, OH 44232</p>
+                        <a href="https://maps.app.goo.gl/3MThiNGhZ49SAV9m6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors">
+                            <span>Open in Maps</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: Tickets -->
+    <!-- ============================================ -->
+    <div id="tickets" class="content-section scroll-mt-20">
+        <h2>Get Your Tickets</h2>
+
+        <!-- Event Details Summary -->
+        <div class="bg-primary-50 rounded-xl p-6 mb-8 border border-primary-200">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center mb-6">
+                <div>
+                    <div class="flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold text-gray-900">Date</span>
+                    </div>
+                    <p class="text-xl font-bold text-primary-600">February 28th</p>
+                </div>
+                <div>
+                    <div class="flex items-center justify-center mb-2">
+                        <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold text-gray-900">Location</span>
+                    </div>
+                    <p class="text-xl font-bold text-primary-600">The CORE</p>
+                </div>
+            </div>
+            <div class="border-t border-primary-200 pt-6">
+                <div class="flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="font-semibold text-gray-900">Event Schedule</span>
+                </div>
+                <p class="text-xl font-bold text-primary-600 text-center mb-2">11 AM - 6 PM</p>
+                <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-8 text-gray-700">
+                    <div class="text-center">
+                        <span class="font-semibold">Eating Session 1:</span> 11 AM - 2 PM
+                    </div>
+                    <div class="text-center">
+                        <span class="font-semibold">Eating Session 2:</span> 3 PM - 6 PM
+                    </div>
+                </div>
+                <p class="text-center text-gray-600 mt-3">Activities & entertainment run all day — even during the food break!</p>
+            </div>
+        </div>
+
+        <!-- Ticket Options -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <!-- Youth Passport -->
+            <div class="bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden hover:border-primary-300 transition-colors">
+                <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 px-6 py-3">
+                    <h3 class="text-xl font-bold text-white">Youth Passport</h3>
+                    <p class="text-yellow-100 text-sm">Ages 17 and under</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-center mb-4">
+                        <span class="text-4xl font-bold text-gray-900">$15</span>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            3 slice pizza passport
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            1 soda or water
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            1 ice cream dessert
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Access to all activities
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900">Volunteers</h3>
+            <!-- Adult Passport -->
+            <div class="bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden hover:border-primary-300 transition-colors">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3">
+                    <h3 class="text-xl font-bold text-white">Adult Passport</h3>
+                    <p class="text-blue-100 text-sm">Ages 18 and over</p>
                 </div>
-                <p class="text-gray-600 mb-4">
-                    Help make Battle of the Slice a success! We need volunteers for setup, serving, activities, and cleanup.
-                </p>
-                <a href="mailto:greenschoolsfoundation@gmail.com?subject=Battle of the Slice - Volunteer" class="text-primary-600 hover:text-primary-700 font-semibold">
-                    Sign Up to Volunteer →
-                </a>
+                <div class="p-6">
+                    <div class="text-center mb-4">
+                        <span class="text-4xl font-bold text-gray-900">$20</span>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            8 slice pizza passport
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            1 soda or water
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            1 ice cream dessert
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Access to all activities
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd"/>
-                            <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900">Sponsors</h3>
+            <!-- Couples/Parent Passport -->
+            <div class="bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden hover:border-primary-300 transition-colors">
+                <div class="bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-3">
+                    <h3 class="text-xl font-bold text-white">Couples/Parent Passport</h3>
+                    <p class="text-pink-100 text-sm">For two adults</p>
                 </div>
-                <p class="text-gray-600 mb-4">
-                    Support Green students while gaining visibility in the community. Various sponsorship levels available.
-                </p>
-                <a href="mailto:greenschoolsfoundation@gmail.com?subject=Battle of the Slice - Sponsorship" class="text-primary-600 hover:text-primary-700 font-semibold">
-                    Become a Sponsor →
-                </a>
+                <div class="p-6">
+                    <div class="text-center mb-4">
+                        <span class="text-4xl font-bold text-gray-900">$35</span>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Two 8 slice pizza passports
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            2 sodas or waters
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            2 ice cream desserts
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Access to all activities
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900">Vendors</h3>
+            <!-- Family Passport -->
+            <div class="bg-white rounded-xl shadow-lg border-2 border-primary-400 overflow-hidden relative">
+                <div class="absolute top-0 right-0 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">BEST VALUE</div>
+                <div class="bg-gradient-to-r from-primary-500 to-accent-500 px-6 py-3">
+                    <h3 class="text-xl font-bold text-white">Family Passport</h3>
+                    <p class="text-primary-100 text-sm">2 Adults + up to 4 Children</p>
                 </div>
-                <p class="text-gray-600 mb-4">
-                    Interested in having a booth at the event? We welcome dessert vendors, beverage providers, and more!
-                </p>
-                <a href="mailto:greenschoolsfoundation@gmail.com?subject=Battle of the Slice - Vendor Inquiry" class="text-primary-600 hover:text-primary-700 font-semibold">
-                    Vendor Information →
-                </a>
+                <div class="p-6">
+                    <div class="text-center mb-4">
+                        <span class="text-4xl font-bold text-gray-900">$75</span>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Four 3 slice passports + Two 8 slice passports
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            6 sodas or waters
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            6 ice cream desserts
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Access to all activities
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </div>
+
+        <!-- Buy Tickets CTA -->
+        <div class="text-center">
+            <a href="#buy-tickets" class="inline-flex items-center justify-center px-10 py-5 text-2xl font-bold text-white bg-primary-600 hover:bg-primary-700 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                <svg class="w-7 h-7 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+                </svg>
+                <span>Buy Tickets Now</span>
+            </a>
+            <p class="mt-3 text-red-600 font-semibold">Presale tickets only — no tickets at the door!</p>
+            <p class="mt-2 text-gray-600">All proceeds support Green students through scholarships and educational programs.</p>
         </div>
     </div>
 
@@ -222,20 +543,5 @@ import ContentLayout from "../layouts/ContentLayout.astro";
                 <a href="/academic-class-grants" class="text-primary-600 hover:text-primary-700 font-semibold">Learn About Grants →</a>
             </div>
         </div>
-    </div>
-
-    <!-- Buy Tickets CTA -->
-    <div class="content-section text-center">
-        <h2>Get Your Tickets Today!</h2>
-        <p class="mb-6">
-            Don't miss Green's Battle of the Slice on February 28th. Grab your tickets now!
-        </p>
-        <!-- TODO: Replace href with actual Stripe checkout link -->
-        <a href="#buy-tickets" class="inline-flex items-center justify-center px-8 py-4 text-xl font-bold text-white bg-primary-600 hover:bg-primary-700 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
-            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
-            </svg>
-            Buy Tickets
-        </a>
     </div>
 </ContentLayout>

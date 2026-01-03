@@ -12,7 +12,9 @@
       "Bash(sips:*)",
       "Bash(ls:*)",
       "Bash(pip3 install:*)",
-      "Bash(unzip:*)"
+      "Bash(unzip:*)",
+      "WebSearch",
+      "WebFetch(domain:greenareachamber.org)"
     ],
     "deny": [],
     "ask": []

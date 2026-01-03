@@ -1,5 +1,7 @@
 # Astro Starter Kit: Basics
 
+This is the website for greenschoolsfoundation.org
+
 ```sh
 npm create astro@latest -- --template basics
 ```
