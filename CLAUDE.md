@@ -7,6 +7,7 @@ This is the official website for the **Green Schools Foundation**, a nonprofit o
 ## Mission
 
 The Green Schools Foundation promotes academic excellence and success for all students in the Green Local School District through:
+
 - Scholarship programs
 - Academic classroom grants for teachers
 - The Laws of Life essay competition
@@ -71,6 +72,7 @@ gsf/
 ## Design System
 
 ### Color Scheme
+
 The website uses **orange and black** to match Green Local Schools' brand identity:
 
 - **Primary (Orange)**: `#ea580c` (primary-600) for headings, buttons, brand elements
@@ -81,6 +83,7 @@ The website uses **orange and black** to match Green Local Schools' brand identi
 See `COLOR_SCHEME.md` for complete palette and usage guidelines.
 
 ### Typography & Spacing
+
 - System font stack for optimal performance
 - Consistent spacing using Tailwind's spacing scale
 - Responsive typography that scales appropriately on mobile
@@ -88,22 +91,26 @@ See `COLOR_SCHEME.md` for complete palette and usage guidelines.
 ## Key Features
 
 ### Navigation
+
 - Desktop: Full navigation bar with dropdown menus
 - Mobile: Responsive hamburger menu
 - Foundation Initiatives submenu (Scholarships, Grants, Academy of Scholars, Laws of Life)
 
 ### Homepage Sections
+
 1. **Hero/Gallery**: Image carousel showcasing school activities
 2. **Memberships**: Individual, Family, and Corporate membership options
 3. **Donate**: Call-to-action for donations
 4. **Board**: Information about the foundation's board of trustees
 
 ### Content Pages
+
 - All pages use consistent `ContentLayout` with breadcrumb navigation
 - SEO-optimized meta tags and descriptions
 - Responsive design for all screen sizes
 
 ### Blog System
+
 - Located in `src/pages/blog.astro` (index) and `src/pages/post/` (individual posts)
 - Uses `BlogPostLayout` for consistent formatting
 - Each post is a separate `.astro` file
@@ -135,22 +142,26 @@ npm run cf-typegen
 ### Making Changes
 
 #### Adding a New Page
+
 1. Create `src/pages/page-name.astro`
 2. Import and use `ContentLayout` or `Layout`
 3. Add navigation link to `Header.astro` if needed
 4. Ensure breadcrumbs are configured correctly
 
 #### Adding a Blog Post
+
 1. Create `src/pages/post/post-slug.astro`
 2. Use `BlogPostLayout` for consistent structure
 3. Update `src/pages/blog.astro` to include the new post in the listing
 
 #### Updating Components
+
 - Components are in `src/components/`
 - Make changes to `.astro` files
 - Components are automatically reactive
 
 #### Adding Images
+
 - Place images in `public/images/` for direct access
 - Or use `src/assets/` for Astro's image optimization
 - Reference with `/images/filename.ext` in HTML
@@ -158,12 +169,15 @@ npm run cf-typegen
 ## Important Context
 
 ### Migration from Wix
+
 - The old Wix website is preserved in `_archive/www.greenschoolsfoundation.org/`
 - All URLs were preserved to maintain SEO and prevent broken links
 - Legacy file structure in `public/_files/` is maintained for compatibility
 
 ### URL Structure (Preserved)
+
 All existing URLs continue to work:
+
 - `/about-gsf`
 - `/scholarships`
 - `/foundation-initiatives`
@@ -175,11 +189,13 @@ All existing URLs continue to work:
 - `/post/[slug]`
 
 ### Content Management
+
 - **No CMS**: Content is managed directly in `.astro` files
 - Updates require editing source files and redeploying
 - Consider future CMS integration for non-technical content editors
 
 ### Performance
+
 - Static site generation means excellent performance
 - Cloudflare CDN provides global distribution
 - Optimized images and minimal JavaScript
@@ -188,31 +204,37 @@ All existing URLs continue to work:
 ## Contact Information
 
 - **Organization**: Green Schools Foundation
-- **Email**: greenschoolsfoundation@gmail.com
-- **Website**: https://greenschoolsfoundation.org
-- **Mailing Address**: PO Box 406, Green, OH 44232
+- **Email**: <greenschoolsfoundation@gmail.com>
+- **Website**: <https://greenschoolsfoundation.org>
+- **Mailing Address**: PO Box 104, Green, OH 44232
 - **Phone**: 330-896-7790
 
 ## Common Tasks
 
 ### Update Board Members
+
 Edit `src/components/Board.astro`
 
 ### Update Membership Pricing
+
 Edit `src/components/Memberships.astro`
 
 ### Update Navigation
+
 Edit `src/components/Header.astro`
 
 ### Update Footer Links
+
 Edit `src/components/Footer.astro`
 
 ### Change Color Scheme
+
 Edit `tailwind.config.js` and update color variables
 
 ## Deployment
 
 The site is configured to deploy to Cloudflare Pages:
+
 1. Build occurs via `npm run build` (outputs to `dist/`)
 2. Cloudflare adapter optimizes for Pages platform
 3. Deploy with `npm run deploy` or via Git integration
@@ -228,6 +250,7 @@ The site is configured to deploy to Cloudflare Pages:
 ## Future Enhancements
 
 Potential improvements documented in `MIGRATION.md`:
+
 - Online application forms (scholarships, grants, trustee)
 - Event registration system
 - Member portal
@@ -239,6 +262,6 @@ Potential improvements documented in `MIGRATION.md`:
 
 - Full migration documentation: `MIGRATION.md`
 - Color palette details: `COLOR_SCHEME.md`
-- Astro documentation: https://docs.astro.build
-- Tailwind CSS documentation: https://tailwindcss.com
-- Cloudflare Pages documentation: https://developers.cloudflare.com/pages
+- Astro documentation: <https://docs.astro.build>
+- Tailwind CSS documentation: <https://tailwindcss.com>
+- Cloudflare Pages documentation: <https://developers.cloudflare.com/pages>
