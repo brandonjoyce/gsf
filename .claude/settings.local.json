@@ -28,7 +28,8 @@
       "WebFetch(domain:slicelife.com)",
       "WebFetch(domain:1000logos.net)",
       "WebFetch(domain:www.yelp.com)",
-      "WebFetch(domain:www.toasttab.com)"
+      "WebFetch(domain:www.toasttab.com)",
+      "WebFetch(domain:www.parkstreetpizza.com)"
     ],
     "deny": [],
     "ask": []
