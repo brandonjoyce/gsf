@@ -7,10 +7,11 @@ export interface Props {
     title: string;
     description?: string;
     showBreadcrumbs?: boolean;
+    showHero?: boolean;
     breadcrumbs?: Array<{name: string, href: string}>;
 }
 
-const { title, description, showBreadcrumbs = false, breadcrumbs = [] } = Astro.props;
+const { title, description, showBreadcrumbs = false, showHero = true, breadcrumbs = [] } = Astro.props;
 ---
 
 <Layout title={title} description={description}>
@@ -18,18 +19,20 @@ const { title, description, showBreadcrumbs = false, breadcrumbs = [] } = Astro.
     <Header />
 
     <!-- Hero Section for Content Pages -->
-    <section class="bg-gradient-to-br from-primary-500 to-secondary-800 text-white py-20">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">{title}</h1>
-                {description && (
-                    <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
-                        {description}
-                    </p>
-                )}
+    {showHero && (
+        <section class="bg-gradient-to-br from-primary-500 to-secondary-800 text-white py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">{title}</h1>
+                    {description && (
+                        <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
+                            {description}
+                        </p>
+                    )}
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    )}
 
     <!-- Breadcrumbs -->
     {showBreadcrumbs && breadcrumbs.length > 0 && (
