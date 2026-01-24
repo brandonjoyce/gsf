@@ -9,12 +9,13 @@ export interface Props {
     showBreadcrumbs?: boolean;
     showHero?: boolean;
     breadcrumbs?: Array<{name: string, href: string}>;
+    image?: string;
 }
 
-const { title, description, showBreadcrumbs = false, showHero = true, breadcrumbs = [] } = Astro.props;
+const { title, description, showBreadcrumbs = false, showHero = true, breadcrumbs = [], image } = Astro.props;
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} image={image}>
     <div id="top"></div>
     <Header />
 

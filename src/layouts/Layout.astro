@@ -2,12 +2,19 @@
 export interface Props {
     title?: string;
     description?: string;
+    image?: string;
+    url?: string;
 }
 
 const {
     title = "Green Schools Foundation",
     description = "Serving Students Since 1992 - Providing scholarships, classroom grants, and unique opportunities to students and staff in the Green Local School system.",
+    image = "/gsf-logo.png",
+    url = Astro.url.href,
 } = Astro.props;
+
+const siteUrl = "https://greenschoolsfoundation.org";
+const fullImageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
 ---
 
 <!doctype html>
@@ -17,6 +24,22 @@ const {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={description} />
         <meta name="generator" content={Astro.generator} />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={fullImageUrl} />
+        <meta property="og:site_name" content="Green Schools Foundation" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={url} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={fullImageUrl} />
+
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
