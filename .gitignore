@@ -30,3 +30,6 @@ pnpm-debug.log*
 !.env.example
 
 NOTES.txt
+
+# Claude Code settings
+.claude/
