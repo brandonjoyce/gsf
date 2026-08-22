@@ -1,28 +1,19 @@
 ---
-import ContentLayout from "../layouts/ContentLayout.astro";
+import ContentLayout from "../../layouts/ContentLayout.astro";
 ---
 
 <ContentLayout
-    title="Battle of the Slice | February 28th at The CORE"
-    description="Join us February 28th for Green's Battle of the Slice! Sample pizzas from local favorites, enjoy ice cream, activities for all ages, and support student scholarships. All proceeds benefit the Green Schools Foundation."
+    title="Battle of the Slice 2026 | February 28th at The CORE"
+    description="Recap of Green's 2026 Battle of the Slice! Local pizzas, ice cream, activities for all ages, and support for student scholarships through the Green Schools Foundation."
     showBreadcrumbs={true}
     showHero={false}
     image="/images/Battle of the Slice.jpg?v=2"
     breadcrumbs={[
         { name: "Events", href: "/events" },
-        { name: "Battle of the Slice", href: "/battle-of-the-slice" }
+        { name: "Battle of the Slice", href: "/battle-of-the-slice" },
+        { name: "2026", href: "/battle-of-the-slice/2026" }
     ]}
 >
-    <!-- Sticky Buy Tickets Button -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <a href="#tickets" class="inline-flex items-center justify-center px-6 py-4 text-lg font-bold text-white bg-primary-600 hover:bg-primary-700 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105 animate-pulse hover:animate-none">
-            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
-            </svg>
-            <span>Buy Tickets</span>
-        </a>
-    </div>
-
     <!-- Hero Section with Logo -->
     <div class="text-center mb-12">
         <img
@@ -73,12 +64,6 @@ import ContentLayout from "../layouts/ContentLayout.astro";
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 <span><strong>CORE Turf Field:</strong> High school sports clinics</span>
-            </li>
-            <li class="flex items-start bg-red-50 border border-red-200 rounded-lg p-3 -mx-3">
-                <svg class="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-red-800 font-semibold"><strong>Tickets:</strong> Must be purchased in advance — no ticket sales at the door!</span>
             </li>
         </ul>
 
@@ -159,7 +144,6 @@ import ContentLayout from "../layouts/ContentLayout.astro";
                 <span class="text-xs text-primary-600">Visit Website →</span>
             </a>
         </div>
-        <p class="text-center text-gray-500 italic -mt-6 mb-10">...and more to come!</p>
 
         <!-- Ice Cream Shops -->
         <h3 class="text-xl font-bold text-gray-900 mb-4">Ice Cream & Desserts</h3>
@@ -207,7 +191,7 @@ import ContentLayout from "../layouts/ContentLayout.astro";
                 </div>
                 <div class="text-left">
                     <h4 class="font-bold text-gray-900 mb-1">Starbucks</h4>
-                    <p class="text-sm text-gray-600 mb-2">Your favorite Starbucks beverages will be available at the event!</p>
+                    <p class="text-sm text-gray-600 mb-2">Your favorite Starbucks beverages were available at the event!</p>
                     <span class="text-xs text-primary-600">View Location →</span>
                 </div>
             </a>
@@ -268,7 +252,7 @@ import ContentLayout from "../layouts/ContentLayout.astro";
 
         <!-- Performances -->
         <h3 class="text-xl font-bold text-gray-900 mb-4">Live Performances</h3>
-        <p class="text-gray-600 mb-6">Enjoy entertainment from Green Local Schools students!</p>
+        <p class="text-gray-600 mb-6">Entertainment from Green Local Schools students!</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-lg p-6 text-center border border-primary-200">
                 <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow">
@@ -310,23 +294,8 @@ import ContentLayout from "../layouts/ContentLayout.astro";
             <div class="flex-1 text-center md:text-left">
                 <h2 class="text-2xl font-bold text-primary-600 mb-4">Green Area Chamber of Commerce</h2>
                 <p class="text-gray-700 mb-4">
-                    The Green Area Chamber is proud to partner with the Green Schools Foundation, Green Local Schools, and the City of Green for this community event. The Chamber is coordinating all of the tables this year and we are very excited to be a part of this collaboration!
+                    The Green Area Chamber partnered with the Green Schools Foundation, Green Local Schools, and the City of Green for this community event. The Chamber coordinated all of the tables and we were very excited to be a part of this collaboration!
                 </p>
-                <p class="text-gray-700 italic mb-6">
-                    "Taste your way through the city's best pizzas, enjoy games and activities for all ages, and support student success—one delicious slice at a time!"
-                </p>
-                <div class="bg-white rounded-lg p-4 border border-gray-200">
-                    <h3 class="font-semibold text-gray-900 mb-2">Business Table Opportunity</h3>
-                    <p class="text-gray-600 text-sm mb-4">
-                        Are you a business interested in participating? Tables are available for purchase as a fundraiser for the Chamber.
-                    </p>
-                    <a href="https://www.zeffy.com/en-US/ticketing/battle-of-the-slice" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-secondary-700 hover:bg-secondary-800 rounded-lg transition-colors">
-                        Purchase a Business Table
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                        </svg>
-                    </a>
-                </div>
                 <div class="mt-4">
                     <a href="https://greenareachamber.org/" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 font-semibold">
                         Learn more about the Green Area Chamber →
@@ -349,11 +318,8 @@ import ContentLayout from "../layouts/ContentLayout.astro";
                         <a href="https://maps.app.goo.gl/3MThiNGhZ49SAV9m6" target="_blank" rel="noopener noreferrer" class="font-bold hover:text-primary-700"><strong>1717 Steese Road, Green, OH</strong></a>
                     </p>
                     <p class="text-gray-700 mb-6">
-                        Battle of the Slice takes place at The CORE, Green's premier recreation facility. Come check out this amazing community space!
+                        Battle of the Slice took place at The CORE, Green's premier recreation facility.
                     </p>
-          <p>
-            <a href="https://www.cityofgreen.org/688/The-CORE-Center-of-Recreation-Education">Visit the CORE</a> and find more family fun activities throughout the day!  
-          </p>
                     <a href="https://www.cityofgreen.org/688/The-CORE-Center-of-Recreation-Education" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold">
                         Learn more about The CORE
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -368,7 +334,7 @@ import ContentLayout from "../layouts/ContentLayout.astro";
                                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                             </svg>
                         </div>
-                        <h4 class="font-bold text-gray-900 mb-2">Get Directions</h4>
+                        <h4 class="font-bold text-gray-900 mb-2">Venue Location</h4>
                         <p class="text-gray-600 text-sm mb-4">1717 Steese Road<br/>Green, OH 44232</p>
                         <a href="https://maps.app.goo.gl/3MThiNGhZ49SAV9m6" target="_blank" rel="noopener noreferrer" class="button-primary inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors">
                             <span>Open in Maps</span>
@@ -376,249 +342,6 @@ import ContentLayout from "../layouts/ContentLayout.astro";
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-                <a href="https://docs.google.com/document/d/1j-dE1poO1DU3Jc-KMY2FOOKlaHbsuxMRwD1-8C9wyS8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 text-sm font-semibold text-primary-700 bg-white border-2 border-primary-300 hover:border-primary-500 rounded-lg transition-colors">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd"/>
-                    </svg>
-                    Venue Map
-                </a>
-                <a href="https://docs.google.com/document/d/1LiEgMcY7s9fwenOkOnm5U4y9sw6mQA6XylqWqjI5y4E/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 text-sm font-semibold text-primary-700 bg-white border-2 border-primary-300 hover:border-primary-500 rounded-lg transition-colors">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
-                    </svg>
-                    Guest Information
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- SECTION 4: Tickets -->
-    <!-- ============================================ -->
-    <div id="tickets" class="content-section scroll-mt-20">
-        <h2>Get Your Tickets</h2>
-
-        <!-- Event Details Summary -->
-        <div class="bg-primary-50 rounded-xl p-6 mb-8 border border-primary-200">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center mb-6">
-                <div>
-                    <div class="flex items-center justify-center mb-2">
-                        <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
-                        </svg>
-                        <span class="font-semibold text-gray-900">Date</span>
-                    </div>
-                    <p class="text-xl font-bold text-primary-600">February 28th</p>
-                </div>
-                <div>
-                    <div class="flex items-center justify-center mb-2">
-                        <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                        </svg>
-                        <span class="font-semibold text-gray-900">Location</span>
-                    </div>
-                    <a href="https://maps.app.goo.gl/3MThiNGhZ49SAV9m6" target="_blank" rel="noopener noreferrer" class="text-xl font-bold text-primary-600 hover:text-primary-700">The CORE</a>
-                </div>
-            </div>
-            <div class="border-t border-primary-200 pt-6">
-                <div class="flex items-center justify-center mb-3">
-                    <svg class="w-6 h-6 text-primary-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="font-semibold text-gray-900">Event Schedule</span>
-                </div>
-                <p class="text-xl font-bold text-primary-600 text-center mb-2">11 AM - 6 PM</p>
-                <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-8 text-gray-700">
-                    <div class="text-center">
-                        <span class="font-semibold">Eating Session 1:</span> 11 AM - 2 PM
-                    </div>
-                    <div class="text-center">
-                        <span class="font-semibold">Eating Session 2:</span> 3 PM - 6 PM
-                    </div>
-                </div>
-                <p class="text-center text-gray-600 mt-3">Activities & entertainment run all day — even during the food break!</p>
-            </div>
-        </div>
-
-        <!-- Ticket Options -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <!-- Youth & Senior Passport -->
-            <div class="bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden hover:border-primary-300 transition-colors">
-                <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 px-6 py-3">
-                    <h3 class="text-xl font-bold text-white">Youth & Senior Passport</h3>
-                    <p class="text-yellow-100 text-sm">Ages 17 and under or 65+</p>
-                </div>
-                <div class="p-6">
-                    <div class="text-center mb-4">
-                        <span class="text-4xl font-bold text-gray-900">$15</span>
-                    </div>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            3 slice pizza passport
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            1 soda or water
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            1 ice cream dessert
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            Access to all activities
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Adult Passport -->
-            <div class="bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden hover:border-primary-300 transition-colors">
-                <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3">
-                    <h3 class="text-xl font-bold text-white">Adult Passport</h3>
-                    <p class="text-blue-100 text-sm">Ages 18 and over</p>
-                </div>
-                <div class="p-6">
-                    <div class="text-center mb-4">
-                        <span class="text-4xl font-bold text-gray-900">$20</span>
-                    </div>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            8 slice pizza passport
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            1 soda or water
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            1 ice cream dessert
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            Access to all activities
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Couples/Parent Passport -->
-            <div class="bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden hover:border-primary-300 transition-colors">
-                <div class="bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-3">
-                    <h3 class="text-xl font-bold text-white">Couples/Parent Passport</h3>
-                    <p class="text-pink-100 text-sm">For two adults</p>
-                </div>
-                <div class="p-6">
-                    <div class="text-center mb-4">
-                        <span class="text-4xl font-bold text-gray-900">$35</span>
-                    </div>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            Two 8 slice pizza passports
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            2 sodas or waters
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            2 ice cream desserts
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            Access to all activities
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Family Passport -->
-            <div class="bg-white rounded-xl shadow-lg border-2 border-primary-400 overflow-hidden relative">
-                <div class="absolute top-0 right-0 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">BEST VALUE</div>
-                <div class="bg-gradient-to-r from-primary-500 to-accent-500 px-6 py-3">
-                    <h3 class="text-xl font-bold text-white">Family Passport</h3>
-                    <p class="text-primary-100 text-sm">2 Adults + up to 4 Children</p>
-                </div>
-                <div class="p-6">
-                    <div class="text-center mb-4">
-                        <span class="text-4xl font-bold text-gray-900">$75</span>
-                    </div>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            Four 3 slice passports + Two 8 slice passports
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            6 sodas or waters
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            6 ice cream desserts
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            Access to all activities
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <p class="font-semibold">When purchasing your tickets for the event, select the hour you would like to eat and spend the rest of the time enjoying the entertainment and activities.</p>
-
-        <!-- Buy Tickets CTA -->
-        <div class="text-center">
-            <!-- Warning callout -->
-            <div class="inline-flex items-center bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-                <svg class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-red-800 font-semibold">Presale tickets only — no tickets at the door!</span>
-            </div>
-
-            <a href="https://events.hometownticketing.com/boxoffice/greenlocalschools/L2VtYmVkL2V2ZW50LzExNTI=" target="_blank" rel="noopener noreferrer" class="button-primary !inline-flex items-center justify-center px-10 py-5 text-2xl font-bold text-white bg-primary-600 hover:bg-primary-700 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 whitespace-nowrap">
-                <svg class="w-7 h-7 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
-                </svg>
-                <span>Buy Tickets Now</span>
-            </a>
-            <p class="mt-4 text-gray-600">All proceeds support Green students through scholarships and educational programs.</p>
         </div>
     </div>
 

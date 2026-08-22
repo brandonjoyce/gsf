@@ -1,0 +1,197 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+---
+
+<ContentLayout
+    title="Battle of the Slice"
+    description="Green's Battle of the Slice — a yearly community event featuring local pizzas, ice cream, activities for all ages, and support for student scholarships through the Green Schools Foundation."
+    showBreadcrumbs={true}
+    showHero={false}
+    image="/images/Battle of the Slice.jpg?v=2"
+    breadcrumbs={[
+        { name: "Events", href: "/events" },
+        { name: "Battle of the Slice", href: "/battle-of-the-slice" }
+    ]}
+>
+    <!-- Hero Section with Logo -->
+    <div class="text-center mb-12">
+        <img
+            src="/images/Battle of the Slice.jpg?v=2"
+            alt="Green's Battle of the Slice - Presented by GSF Green Schools Foundation"
+            class="mx-auto max-w-2xl w-full mb-8"
+        />
+        <p class="text-xl text-gray-700 max-w-2xl mx-auto">
+            Taste your way through the city's best pizzas, enjoy games and activities for all ages, and support student success — one delicious slice at a time! All proceeds support scholarships, grants, and programs through the Green Schools Foundation.
+        </p>
+    </div>
+
+    <!-- Next Event -->
+    <div class="content-section text-center">
+        <h2>Next Event Coming Soon!</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto mb-6">
+            Battle of the Slice is an annual community celebration bringing together local pizzerias, ice cream shops, family activities, and live performances — all to support student success in the Green Local School District.
+        </p>
+        <p class="text-gray-700 max-w-2xl mx-auto mb-8">
+            Stay tuned for details on the next Battle of the Slice! Follow our blog and events page for announcements.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="/blog" class="button-primary">Follow Our Blog</a>
+            <a href="/events" class="button-secondary">View All Events</a>
+        </div>
+    </div>
+
+    <!-- Thank You to 2026 Sponsors & Participants -->
+    <div class="highlight-box mb-12">
+        <div class="text-center">
+            <h2 class="text-2xl font-bold text-primary-600 mb-4">Thank You to Our 2026 Sponsors & Participants!</h2>
+            <p class="text-gray-700 max-w-2xl mx-auto mb-8">
+                A huge thank you to all the local businesses, volunteers, and community members who made our 2026 Battle of the Slice a success. Your support helps fund scholarships, academic classroom grants, and educational programs for Green students.
+            </p>
+        </div>
+
+        <!-- Pizza Shops -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4 text-center">Participating Pizza Shops</h3>
+        <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
+            <a href="https://www.uppercrustoh.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/upper-crust-logo.png" alt="Upper Crust" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://www.pizzahut.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/pizza-hut-logo.png" alt="Pizza Hut" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://www.hungryhowies.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/hungry-howies-logo.png" alt="Hungry Howie's" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://myguiseppes.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/guiseppes-logo.jpg" alt="Guiseppe's" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://kittlesbrickovenpub.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/kittles-logo.png" alt="Kittle's Brick Oven" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://dechecospizzeria.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/dechecos-logo.webp" alt="DeCheco's" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://www.parkstreetpizza.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/park-street-pizza-logo.png?v=2" alt="Park Street Pizza" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://www.gioninos.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/gioninos-logo.png" alt="Gionino's Pizzeria" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://upperdeckbarandgrill.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/upperdeck-logo.png" alt="Upper Deck Bar and Grill" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://www.papajohns.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/papa-johns-logo.png" alt="Papa John's" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://www.howlinbird.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/howlin-bird-logo.webp" alt="The Howlin' Bird" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://www.sluggers-putters.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/sluggers-putters-logo.png" alt="Sluggers & Putters" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+        </div>
+
+        <!-- Ice Cream & Desserts -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4 text-center">Ice Cream & Desserts</h3>
+        <div class="grid grid-cols-3 md:grid-cols-5 gap-4 mb-8">
+            <a href="https://www.pavscreamery.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/pavs-logo.png" alt="Pav's Creamery" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://handelsicecream.com/store/green/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/handels-logo.png" alt="Handel's Ice Cream" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://www.dairyqueen.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/dairy-queen-logo.png" alt="Dairy Queen" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://www.waylonshandcrafted.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/waylons-logo.jpg" alt="Waylon's Handcrafted" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://www.instagram.com/sicilysitalianicebox/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 text-center hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/sicilys-logo.jpg" alt="Sicily's Italian Icebox" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+        </div>
+
+        <!-- Partners -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4 text-center">Community Partners</h3>
+        <div class="flex flex-wrap justify-center gap-4 mb-6">
+            <a href="https://greenareachamber.org/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/green-chamber-logo.jpg?v=022026" alt="Green Area Chamber of Commerce" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+            <a href="https://maps.app.goo.gl/eUzxaLDZjA4vqaeb6" target="_blank" rel="noopener noreferrer" class="bg-white rounded-lg shadow-md p-3 hover:shadow-lg transition-shadow border border-gray-200 hover:border-primary-300">
+                <div class="h-12 flex items-center justify-center">
+                    <img src="/images/logos/starbucks-logo.png" alt="Starbucks" class="max-h-full max-w-full object-contain" />
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Previous Events -->
+    <div class="content-section text-center">
+        <h2>Previous Events</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <a href="/battle-of-the-slice/2026" class="block bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                <div class="aspect-video bg-gray-100 flex items-center justify-center p-4">
+                    <img
+                        src="/images/Battle of the Slice.jpg?v=2"
+                        alt="Battle of the Slice 2026"
+                        class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    />
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary-600 transition-colors">2026 - February 28th</h3>
+                    <p class="text-gray-600 text-sm mt-1">The CORE - Green, OH</p>
+                    <span class="text-primary-600 font-semibold text-sm mt-2 inline-block group-hover:text-primary-700">View Event Details →</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Mission Reminder -->
+    <div class="highlight-box">
+        <div class="text-center">
+            <h2 class="text-2xl font-bold text-primary-600 mb-4">Every Slice Supports Students</h2>
+            <p class="text-gray-700 max-w-2xl mx-auto mb-6">
+                All proceeds from Battle of the Slice go directly to supporting scholarships, academic classroom grants, and educational programs through the Green Schools Foundation. Since 1992, we've been committed to promoting academic excellence for all students in the Green Local School District.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/scholarships" class="text-primary-600 hover:text-primary-700 font-semibold">Learn About Scholarships →</a>
+                <a href="/academic-class-grants" class="text-primary-600 hover:text-primary-700 font-semibold">Learn About Grants →</a>
+            </div>
+        </div>
+    </div>
+</ContentLayout>
